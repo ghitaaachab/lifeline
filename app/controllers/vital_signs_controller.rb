@@ -1,0 +1,2 @@
+class VitalSignsController < ApplicationController
+end
