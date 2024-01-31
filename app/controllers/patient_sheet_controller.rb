@@ -1,0 +1,2 @@
+class PatientSheetController < ApplicationController
+end
