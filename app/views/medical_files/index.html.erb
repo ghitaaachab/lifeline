@@ -15,8 +15,12 @@
    <button type="button" class="btn btn-primary">Add New Medical File</button>
 </div>
 <hr>
+<div class="container-sm">
 <%= simple_form_for(@file) do |f| %>
   <%= f.input :name, label: "Enter your file name" %>
   <%= f.input :date, label: "Enter your file date" %>
-  <%= f.button :submit, "Create" %>
+  <%= f.input :description, label: "File description" %>
+  <%= f.input :treating_dr, label: "Treating Doctor" %>
+  <%= f.input :notes, label: "Notes" %>
 <% end %>
+</div>

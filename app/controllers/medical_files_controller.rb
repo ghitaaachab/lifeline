@@ -1,6 +1,10 @@
 class MedicalFilesController < ApplicationController
   def index
     @files = MedicalFile.all
+    @file = MedicalFile.new
+  end
+
+  def create
     @file = MedicalFile.new(file_params)
     @file.save
   end
