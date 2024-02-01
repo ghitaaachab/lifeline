@@ -1,6 +1,8 @@
 <div class="navbar-custom">
-  <div class="navbar-logo">
-    Lifeline
+  <div>
+    <%= link_to "/", class: "navbar-logo" do %>
+      Lifeline
+    <% end %>
   </div>
   <div class="navbar-pages">
     <div>Discover Lifeline</div>
@@ -9,7 +11,14 @@
     <div>Contact</div>
   </div>
   <div class="navbar-actions">
-    <div class="btn-signin">Sign in</div>
-    <div class="btn-signup">Sign up</div>
+    <% if !user_signed_in? %>
+        <div> <%= link_to "Sign in", new_user_session_path, class: "btn-signin" %></div>
+        <div> <%= link_to "Sign up", new_user_registration_path, class: "btn-signup" %></div>
+      <% else %>
+        <div> <%= link_to "Notifications", new_user_registration_path, class: "btn-signin" %></div>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-signin" %>
+
+    <% end %>
   </div>
+
 </div>
