@@ -1,3 +1,5 @@
+$primary-color: #7C3AED;
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
@@ -9,4 +11,54 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar-custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0px;
+}
+
+.navbar-pages {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.navbar-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.navbar-pages * {
+  cursor: pointer;
+}
+
+.btn-signin {
+  padding: 10px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+
+.btn-signup {
+  background-color: $primary-color;
+  padding: 10px 18px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  font-size: 36px;
+  font-weight: 600;
+  cursor: pointer;
+  color: black;
+  text-decoration: none;
 }

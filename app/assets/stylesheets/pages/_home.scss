@@ -1,1 +1,104 @@
 // Specific CSS for your home-page
+$primary-color: #7C3AED;
+$primary-bg: #F6F4F6;
+
+.home-banner {
+  margin: 100px 0px 120px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.home-title {
+  font-size: 64px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.home-action {
+  background-color: $primary-color;
+  padding: 10px 25px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.home-description {
+  font-size: 24px;
+  text-align: center;
+  width: 75%;
+}
+
+.features {
+  background-color: $primary-color;
+  border-radius: 20px;
+  padding: 30px 60px;
+  margin-bottom: 120px;
+  display: flex;
+  gap: 70px;
+  flex-direction: column;
+  background-image: url("/images/amineshapes.jpg");
+}
+
+.features-intro {
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  font-weight: 600;
+}
+
+.intro-paragraph {
+  font-size: 20px;
+}
+
+.intro-heading {
+  font-size: 48px;
+}
+
+.features-cards {
+  align-items: center;
+  justify-content: center;
+  margin: 0px 60px;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+
+.features-card {
+  height: 335px;
+  width: 326px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: $primary-bg;
+  border-radius: 20px;
+  z-index: 10;
+  bottom: 0px;
+  right: 0px;
+}
+
+.feature-icon {
+  background-color: $primary-color;
+  padding: 20px 25px;
+  border-radius: 20px;
+}
+
+.feature-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.feature-paragraph {
+  font-size: 16px;
+  color: #888888;
+  text-align: center;
+  width: 95%;
+}
