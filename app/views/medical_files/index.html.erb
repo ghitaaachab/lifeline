@@ -1,0 +1,22 @@
+<h1>Medical Files</h1>
+<hr>
+<% if @files.present? %>
+  <div class="container mt-4">
+     <% @files.each do |medical_file| %>
+  <div class="container p-3 my-3 border">
+      <p><%= medical_file.name %></p>
+      <p><%= medical_file.created_at %></p>
+    </div>
+  <% end %>
+</div>
+<% end %>
+<hr>
+<div class="d-flex justify-content-center align-items-center">
+   <button type="button" class="btn btn-primary">Add New Medical File</button>
+</div>
+<hr>
+<%= simple_form_for(@file) do |f| %>
+  <%= f.input :name, label: "Enter your file name" %>
+  <%= f.input :date, label: "Enter your file date" %>
+  <%= f.button :submit, "Create" %>
+<% end %>
