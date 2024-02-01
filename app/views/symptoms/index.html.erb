@@ -1,0 +1,24 @@
+<div class="cont">
+  <label class="lab" for="label1">Symptoms *</label>
+  <input class="inp" type="text" id="label1" name="label1" placeholder="Fever">
+
+  <label class="lab" for="date-started">Date started *</label>
+  <input class="inp" type="datetime-local" id="date-started" name="date-started">
+
+  <label class="lab" for="date-finished">Date finished</label>
+  <input class="inp" type="datetime-local" id="date-finished" name="date-finished">
+
+  <button class="btn">+</button>
+
+  <script>
+    // Get current date and time
+    const now = new Date();
+
+    // Format date and time to YYYY-MM-DDTHH:mm
+    const formattedDateTime = now.toISOString().slice(0, 16);
+
+    // Set placeholders for date-time inputs
+    document.getElementById('date-started').setAttribute('placeholder', formattedDateTime);
+    document.getElementById('date-finished').setAttribute('placeholder', formattedDateTime);
+  </script>
+</div>
