@@ -1,0 +1,46 @@
+/* Basic styling for form elements */
+div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #7C3AED;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styling for spacing and layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+/* Optional: Add some padding to the form container */
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
