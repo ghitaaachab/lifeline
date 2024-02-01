@@ -1,5 +1,5 @@
 class SymptomsController < ApplicationController
-  def indes
-    
+  def index
+
   end
 end
