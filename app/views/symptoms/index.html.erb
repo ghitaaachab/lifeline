@@ -1,24 +1,41 @@
-<div class="cont">
-  <label class="lab" for="label1">Symptoms *</label>
-  <input class="inp" type="text" id="label1" name="label1" placeholder="Fever">
+<h1>Symptoms</h1>
 
-  <label class="lab" for="date-started">Date started *</label>
-  <input class="inp" type="datetime-local" id="date-started" name="date-started">
+<%= form_with(model: @new_symptom, url: symptoms_path, method: :post, remote: true) do |form| %>
+  <div class="cont" data-controller="controller">
+    <div class="field">
+      <%= form.label :description, class: "lab" %>
+      <%= form.text_field :description, class: "inp", placeholder: "Fever" %>
+    </div>
 
-  <label class="lab" for="date-finished">Date finished</label>
-  <input class="inp" type="datetime-local" id="date-finished" name="date-finished">
+    <div class="field">
+      <%= form.label :start_date, class: "lab" %>
+      <%= form.datetime_local_field :start_date, class: "inp", id: "date-started" %>
+    </div>
 
-  <button class="btn">+</button>
+    <div class="field">
+      <%= form.label :end_date, class: "lab" %>
+      <%= form.datetime_local_field :end_date, class: "inp", id: "date-finished" %>
+    </div>
 
-  <script>
-    // Get current date and time
-    const now = new Date();
+    <div class="actions">
+      <%= form.submit "Add", class: "btn", id: "submit" %>
+    </div>
+  </div>
+<% end %>
 
-    // Format date and time to YYYY-MM-DDTHH:mm
-    const formattedDateTime = now.toISOString().slice(0, 16);
 
-    // Set placeholders for date-time inputs
-    document.getElementById('date-started').setAttribute('placeholder', formattedDateTime);
-    document.getElementById('date-finished').setAttribute('placeholder', formattedDateTime);
-  </script>
-</div>
+<ul>
+  <% @symptoms.each do |symptom| %>
+    <li>
+      <div id="symptom_<%= symptom.id %>">
+        <span class="symptom-description"><%= symptom.description %></span>
+        <span class="symptom-date"><%= symptom.start_date %></span>
+      </div>
+      <div class="symptom-actions">
+        <%= form_with(model: symptom, url: symptom_path(symptom), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
+          <%= delete_form.submit "Delete", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

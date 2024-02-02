@@ -1,0 +1,132 @@
+
+.mf-container {
+  margin: 0 20%;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px 0px;
+  margin-bottom: 80px;
+}
+
+.mfs-container {
+  margin: 0 20%;
+  border-radius: 15px;
+  padding: 20px 0px;
+  margin-bottom: 80px;
+}
+
+.mf-infos {
+  padding: 0px 30px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mf-name {
+  background-color: #7C3AED;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 24px;
+  margin: 0px 48px 10px 48px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.mf-details {
+  padding: 10px 50px;
+  font-size: 20px;
+}
+
+.details-container {
+  display: flex;
+  gap: 10%;
+  margin-top: 30px;
+}
+
+.details-section {
+  width: 45%;
+  margin-bottom: 0;
+}
+
+.details-infos {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.details-infos div {
+  margin: 0;
+}
+
+.mf-prescriptions, .mf-tests {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mf-image {
+  height: 80px;
+  width: 80px;
+  background-color: #7C3AED;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.back-btn {
+  text-decoration: none;
+  font-size: 16x;
+  padding: 5px 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background-color: #7C3AED;
+  width: fit-content;
+  color: white;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.mf-description {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 20px;
+}
+
+.mf-description div {
+  margin: 0;
+}
+
+.mf-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mfs-list {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 20px;
+}
+
+.mf-view * {
+  color: #7C3AED;
+  text-decoration: none;
+}
+
+.mfs-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.msg-nomedicalfile {
+  font-size: 24px;
+}
+
+.medicalform {
+  margin-bottom: 50px;
+}

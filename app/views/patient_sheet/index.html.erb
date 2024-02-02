@@ -1,0 +1,53 @@
+<h1> Patient sheet </h1>
+
+<%= form_with(model:  @patient_sheet, url: patient_sheet_index_path, method: :post) do |form| %>
+
+  <div>
+    <%= form.label :blood_type, 'blood type' %>
+    <%= form.select :label, [['A+', 'A+'], ['A-', 'A-'], ['B+', 'B+'], ['B-', 'B-'], ['AB+', 'AB+'], ['AB-', 'AB-'], ['O+', 'O+'], ['O-', 'O-']], {}, { class: 'form-control' } %>
+  </div>
+
+  <div>
+     <%= form.label :height, 'Height' %>
+    <%= form.number_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :weight, 'Weight' %>
+    <%= form.number_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :family_history, 'Family history *'  %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :surgical_history,  'Surgical history' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :current_dr,  'Current doctor ' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :current_tt,  'Current treatment ' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :emergency_contact_name , 'Contact name ' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.label :emergency_contact_number , 'Contact number ' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Add ', class: 'btn btn-primary' %>
+  </div>
+<% end %>

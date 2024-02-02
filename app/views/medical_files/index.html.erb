@@ -1,30 +1,37 @@
-<h1>Medical Files</h1>
-<hr>
-<% if @files.present? %>
-  <div class="container mt-4">
-     <% @files.each do |medical_file| %>
-  <div class="container p-3 my-3 border">
-      <p><%= medical_file.name %></p>
-      <p><%= medical_file.created_at %></p>
-    </div>
-  <% end %>
-</div>
-<% end %>
-<hr>
-<div class="d-flex justify-content-center align-items-center">
-   <button type="button" class="btn btn-primary">Add New Medical File</button>
-</div>
-<hr>
-<div class="container-sm">
+<%= stylesheet_link_tag "medical_file", "data-turbo-track": "reload" %>
+<div class="mfs-container" data-controller="medicalfile-form">
+  <div class="mfs-header">
+    <h1>Medical Files</h1>
+    <div data-action="click->medicalfile-form#showform" data-medicalfile-form-target="addmedicalfilebtn" class="btn-signup">Add New Medical File</div>
+  </div>
+  <div class="container-sm d-none medicalform" data-medicalfile-form-target="newmedicalfile">
 <%= simple_form_for(@file) do |f| %>
-  <%= f.input :name, label: "Enter your file name" %>
+  <%= f.input :name, label: "Name your Medical file" %>
   <%= f.input :date, label: "Enter your file date" %>
-  <%= f.input :description, label: "File description" %>
+  <%= f.input :description,  :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "File description" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
   <%= f.input :photo, as: :file %>
   <%= f.input :photo, as: :file %>
   <%= f.input :notes, label: "Notes" %>
-  <%= f.button :submit %>
+  <%= f.button :submit, class: "btn-signup" %>
 <% end %>
+</div>
+  <% if @files.present? %>
+    <div class="container mt-4">
+      <% @files.each do |medical_file| %>
+    <div class="mfs-list">
+        <div><p><%= medical_file.name %></p> <p><%= medical_file.created_at %></p></div>
+        <div class="mf-view">
+          <%= link_to medical_file_path(medical_file.file_id), class: "" do %>
+            View Medical File
+            <i class="fa-solid fa-eye"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% else %>
+    <div class="msg-nomedicalfile">You have 0 Medical files.</div>
+  <% end %>
 </div>
 <%= cl_image_tag @files.last.prescriptions.last.photo.key, height: 300, width: 400, crop: :fill if !@files.last.prescriptions.last.blank? %>
