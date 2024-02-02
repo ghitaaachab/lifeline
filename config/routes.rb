@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   resources :dashboards, only: [:index]
   resources :medical_files, only: [:index, :create, :destroy]
   resources :symptoms, only: [:index, :new, :create]
-  resources :vital_signs, only: [:index, :new, :create]
+  resources :vital_signs
+  resources :patient_sheet, only: [:index, :create]
 end

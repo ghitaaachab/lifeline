@@ -1,8 +1,5 @@
 class VitalSignsController < ApplicationController
   def index
-  end
-
-  def new
     @vital_sign = VitalSign.new
     @vital_signs = VitalSign.all
   end
@@ -13,7 +10,7 @@ class VitalSignsController < ApplicationController
 
 
     if vital_sign.save!
-      redirect_to vital_signs_new_path, notice: 'Vital sign added successfully.'
+      redirect_to vital_signs_path, notice: 'Vital sign added successfully.'
     else
       render :new
     end

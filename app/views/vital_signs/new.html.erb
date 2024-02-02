@@ -1,4 +1,4 @@
-<h1>Add Vital Sign</h1>
+<h1> Vital Sign</h1>
 
 <%= form_with(model:  @vital_sign, url: vital_signs_path, method: :post) do |form| %>
   <div>
@@ -16,10 +16,6 @@
   </div>
 <% end %>
 
-<% @vital_signs.each do |vital_sign| %>
-  <%vital_sign.label %>
-   <%vital_sign.value %>
-<% end %>
 
 <ul>
   <% @vital_signs.each do |vital_sign| %>

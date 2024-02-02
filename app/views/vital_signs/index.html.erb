@@ -1,0 +1,30 @@
+<h1>Add Vital Sign</h1>
+
+<%= form_with(model:  @vital_sign, url: vital_signs_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :label, 'Vital Sign' %>
+    <%= form.select :label, [['Blood Pressure (mmHg)', 'Blood Pressure'], ['Heart Rate (bpm)', 'Heart Rate'], ['Temperature (°C)', 'Temperature'], ['Blood Glucose (mg/dl)', 'Blood Sugar']], {}, { class: 'form-control' } %>
+  </div>
+
+  <div>
+    <%= form.label :value, 'Value' %>
+    <%= form.text_field :value, class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Add Vital Sign', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<ul>
+  <% @vital_signs.each do |vital_sign| %>
+    <li>
+      <div id="vital_sign_<%= vital_sign.id %>">
+        <span class="vital-label"><%= vital_sign.label %></span>
+        <span class="vital-value"><%= vital_sign.value %></span>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<div id="prescription-chart" data-controller="chart"  >
+</div>
