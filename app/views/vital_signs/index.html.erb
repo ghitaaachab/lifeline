@@ -1,21 +1,30 @@
-<div>
-  <label for="label1">Blood Pressure *</label>
-  <input type="text" id="label1" name="label1" >
-</div>
+<h1>Add Vital Sign</h1>
 
-<div>
-  <label for="label2">Heart Rate *</label>
-  <input type="text" id="label2" name="label2" >
-</div>
-
-<div>
-  <label for="label3">Temperature </label>
-  <input type="text" id="label3" name="label3" >
+<%= form_with(model:  @vital_sign, url: vital_signs_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :label, 'Vital Sign' %>
+    <%= form.select :label, [['Blood Pressure (mmHg)', 'Blood Pressure'], ['Heart Rate (bpm)', 'Heart Rate'], ['Temperature (°C)', 'Temperature'], ['Blood Glucose (mg/dl)', 'Blood Sugar']], {}, { class: 'form-control' } %>
   </div>
 
-<div>
-  <label for="label4">blood glucose *</label>
-  <input type="text" id="label4" name="label4" >
+  <div>
+    <%= form.label :value, 'Value' %>
+    <%= form.text_field :value, class: 'form-control' %>
   </div>
-  <button> Add</button>
+
+  <div>
+    <%= form.submit 'Add Vital Sign', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<ul>
+  <% @vital_signs.each do |vital_sign| %>
+    <li>
+      <div id="vital_sign_<%= vital_sign.id %>">
+        <span class="vital-label"><%= vital_sign.label %></span>
+        <span class="vital-value"><%= vital_sign.value %></span>
+      </div>
+    </li>
+  <% end %>
+</ul>
+<div id="prescription-chart" data-controller="chart"  >
 </div>
