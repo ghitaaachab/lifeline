@@ -72,7 +72,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_02_095847) do
     t.string "name"
     t.string "description"
     t.string "treating_dr"
-    t.string "file_id"
     t.date "date"
     t.string "notes"
     t.bigint "user_id", null: false

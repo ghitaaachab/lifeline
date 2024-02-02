@@ -1,19 +1,18 @@
 <h1> Patient sheet </h1>
-
 <%= form_with(model:  @patient_sheet, url: patient_sheet_index_path, method: :post) do |form| %>
 
   <div>
-    <%= form.label :blood_type, 'blood type' %>
+    <%= form.label :blood_type, 'blood type' class: "lab" %>
     <%= form.select :label, [['A+', 'A+'], ['A-', 'A-'], ['B+', 'B+'], ['B-', 'B-'], ['AB+', 'AB+'], ['AB-', 'AB-'], ['O+', 'O+'], ['O-', 'O-']], {}, { class: 'form-control' } %>
   </div>
 
   <div>
-     <%= form.label :height, 'Height' %>
+     <%= form.label :height, 'Height' class: "lab" %>
     <%= form.number_field :value, class: 'form-control' %>
   </div>
 
   <div>
-    <%= form.label :weight, 'Weight' %>
+    <%= form.label :weight, 'Weight'  class: "lab"%>
     <%= form.number_field :value, class: 'form-control' %>
   </div>
 

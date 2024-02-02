@@ -16,15 +16,8 @@
   </div>
 <% end %>
 
-<ul>
-  <% @vital_signs.each do |vital_sign| %>
-    <li>
-      <div id="vital_sign_<%= vital_sign.id %>">
-        <span class="vital-label"><%= vital_sign.label %></span>
-        <span class="vital-value"><%= vital_sign.value %></span>
-      </div>
-    </li>
-  <% end %>
-</ul>
-<canvas id="prescription-chart" data-controller="chart"  >
+<canvas data-controller="chart" data-chart-label-value="Blood Pressure" data-chart-vs-value='<%= @vital_signs.where(label: "Blood Pressure").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  ></canvas>
+<canvas data-controller="chart" data-chart-label-value="Heart Rate" data-chart-vs-value='<%= @vital_signs.where(label: "Heart Rate").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  ></canvas>
+<canvas data-controller="chart" data-chart-label-value="Temperature" data-chart-vs-value='<%= @vital_signs.where(label: "Temperature").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  ></canvas>
+<canvas data-controller="chart" data-chart-label-value="Blood Glucose " data-chart-vs-value='<%= @vital_signs.where(label: "Blood Sugar").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  >
 </canvas>
