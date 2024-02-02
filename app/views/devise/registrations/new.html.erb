@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag "devise_pages", "data-turbo-track": "reload" %>
 
-<div class="signup-form">
+<div class="lifeline-form">
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -13,8 +13,7 @@
                     required: true %>
         <%= f.input :last_name,
                     required: true %>
-        <%= f.input :gender,
-                    required: true %>
+        <%= f.select :gender, options_for_select(['Male', 'Female']), { prompt: 'Select Gender' }, class: ['form-select', 'form-control-lg', 'mt-2', 'mb-3'], required: true %>
         <%= f.input :date_of_birth,
                     required: true %>
         <%= f.input :address,
@@ -30,6 +29,7 @@
         <%= f.input :password_confirmation,
                     required: true,
                     input_html: { autocomplete: "new-password" } %>
+        <%= f.input :photo, as: :file %>
       </div>
 
       <div class="form-actions">

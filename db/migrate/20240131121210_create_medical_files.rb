@@ -4,6 +4,7 @@ class CreateMedicalFiles < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :description
       t.string :treating_dr
+      t.string :file_id
       t.date :date
       t.string :notes
       t.references :user, null: false, foreign_key: true
