@@ -10,8 +10,10 @@
   <%= f.input :date, label: "Enter your file date" %>
   <%= f.input :description,  :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "File description" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
-  <%= f.input :photo, as: :file %>
-  <%= f.input :photo, as: :file %>
+  <%= f.simple_fields_for :prescriptions do |prescription_form| %>
+  <%= prescription_form.file_field :photo %> <% end %>
+  <%= f.simple_fields_for :tests do |test_form| %>
+    <%= test_form.file_field :photos, multiple: true %> <% end %>
   <%= f.input :notes, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>
@@ -34,4 +36,3 @@
     <div class="msg-nomedicalfile">You have 0 Medical files.</div>
   <% end %>
 </div>
-<%= cl_image_tag @files.last.prescriptions.last.photo.key, height: 300, width: 400, crop: :fill if !@files.last.prescriptions.last.blank? %>

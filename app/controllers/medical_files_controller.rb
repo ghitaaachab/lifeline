@@ -12,7 +12,9 @@ class MedicalFilesController < ApplicationController
     file = MedicalFile.new(file_params)
     file.user_id = current_user.id
     file.file_id = Time.now.to_f.to_s.gsub(".", "")
+
     if file.save
+      prescription = Prescription.new(photo: params[:medical_file][:prescriptions][:photo], medical_file_id: file.id)
       redirect_to medical_files_path
     else
       Rails.logger.debug(file.errors.full_messages)
