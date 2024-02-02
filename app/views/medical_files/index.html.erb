@@ -21,6 +21,10 @@
   <%= f.input :date, label: "Enter your file date" %>
   <%= f.input :description, label: "File description" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
+  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :notes, label: "Notes" %>
+  <%= f.button :submit %>
 <% end %>
 </div>
+<%= cl_image_tag @files.last.prescriptions.last.photo.key, height: 300, width: 400, crop: :fill if !@files.last.prescriptions.last.blank? %>
