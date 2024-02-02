@@ -1,0 +1,54 @@
+<%= stylesheet_link_tag "medical_file", "data-turbo-track": "reload" %>
+
+<div class="mf-container">
+  <div>
+    <%= link_to medical_files_path, class: "back-btn" do %>
+      <i class="fa-solid fa-left-long"></i>
+      All Medical Files
+    <% end %>
+  </div>
+  <div class="mf-infos">
+    <div>
+      <%= current_user.first_name %>
+      <%= current_user.last_name %>
+    </div>
+    <div>Date: <%= @file.date %></div>
+  </div>
+  <div class="mf-name">
+    <%= @file.name %>
+  </div>
+  <div class="mf-details">
+    <div class="details-infos">
+      <div class="mf-title">Treating Doctor:</div>
+      <div><%= @file.treating_dr %></div>
+    </div>
+    <div class="details-container">
+      <div class="details-section">
+        <div class="mf-title">Prescriptions</div>
+        <div class="mf-prescriptions">
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+        </div>
+      </div>
+      <div class="details-section">
+        <div class="mf-title">Tests</div>
+        <div class="mf-prescriptions">
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+          <div class="mf-image"></div>
+        </div>
+      </div>
+    </div>
+    <div class="mf-description">
+      <div class="mf-title">Description</div>
+      <div class="mf-description-text"><%= @file.description %></div>
+    </div>
+    <div class="mf-description">
+      <div class="mf-title">Notes</div>
+      <div class="mf-description-text"><%= @file.notes %></div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 class MedicalFilesController < ApplicationController
   def index
-    @files = MedicalFile.all
+    @files = MedicalFile.where(user_id: current_user.id)
     @file = MedicalFile.new
   end
 
@@ -11,6 +11,7 @@ class MedicalFilesController < ApplicationController
   def create
     file = MedicalFile.new(file_params)
     file.user_id = current_user.id
+    file.file_id = Time.now.to_f.to_s.gsub(".", "")
     if file.save
       redirect_to medical_files_path
     else
@@ -20,7 +21,7 @@ class MedicalFilesController < ApplicationController
   end
 
   def show
-    @file = MedicalFile.find(params[:id])
+    @file = MedicalFile.find_by(file_id: params[:id])
   end
 
   private
@@ -28,6 +29,5 @@ class MedicalFilesController < ApplicationController
   def file_params
     params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description, :photo, :user_id, :prescription, :test, :appointment, :vital_sign, :symptom, :medicine, :patient_sheet)
   end
-
 
 end
