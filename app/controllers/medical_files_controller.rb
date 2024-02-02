@@ -26,7 +26,7 @@ class MedicalFilesController < ApplicationController
   private
 
   def file_params
-    params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description)
+    params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description, :photo, :user_id, :prescription, :test, :appointment, :vital_sign, :symptom, :medicine, :patient_sheet)
   end
 
 

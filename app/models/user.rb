@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :medical_files
   has_many :medicines
   has_one :patient_sheet
+  has_one_attached :photo
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
