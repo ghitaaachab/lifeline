@@ -3,7 +3,7 @@
 <%= form_with(model:  @vital_sign, url: vital_signs_path, method: :post) do |form| %>
   <div>
     <%= form.label :label, 'Vital Sign' %>
-    <%= form.select :label, [['Blood Pressure (mmHg)', 'blood_pressure'], ['Heart Rate (bpm)', 'heart_rate'], ['Temperature (°C)', 'temperature'], ['Blood Glucose (mg/dl)', 'blood_glucose']], {}, { class: 'form-control' } %>
+    <%= form.select :label, [['Blood Pressure (mmHg)', 'Blood Pressure'], ['Heart Rate (bpm)', 'Heart Rate'], ['Temperature (°C)', 'Temperature'], ['Blood Glucose (mg/dl)', 'Blood Sugar']], {}, { class: 'form-control' } %>
   </div>
 
   <div>
@@ -15,3 +15,19 @@
     <%= form.submit 'Add Vital Sign', class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+<% @vital_signs.each do |vital_sign| %>
+  <%vital_sign.label %>
+   <%vital_sign.value %>
+<% end %>
+
+<ul>
+  <% @vital_signs.each do |vital_sign| %>
+    <li>
+      <div id="vital_sign_<%= vital_sign.id %>">
+        <span class="vital-label"><%= vital_sign.label %></span>
+        <span class="vital-value"><%= vital_sign.value %></span>
+      </div>
+    </li>
+  <% end %>
+</ul>
