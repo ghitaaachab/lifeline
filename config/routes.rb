@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   resources :medical_files, only: [:index, :create, :destroy, :show]
   end
   resources :vital_signs, only: [:index, :new, :create]
+  resources :symptoms
+  resources :medicines
 end
