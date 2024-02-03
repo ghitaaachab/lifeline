@@ -11,9 +11,9 @@
   <%= f.input :description,  :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "File description" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
   <%= f.simple_fields_for :prescriptions do |prescription_form| %>
-  <%= prescription_form.file_field :photo %> <% end %>
+  <%= prescription_form.input_field :photos, as: :file, multiple: true %><% end %>
   <%= f.simple_fields_for :tests do |test_form| %>
-    <%= test_form.file_field :photos, multiple: true %> <% end %>
+  <%= test_form.input_field :photos, as: :file, multiple: true %><% end %>
   <%= f.input :notes, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>

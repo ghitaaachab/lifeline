@@ -9,12 +9,12 @@ class MedicalFilesController < ApplicationController
   end
 
   def create
-    file = MedicalFile.new(file_params)
-    file.user_id = current_user.id
-    file.file_id = Time.now.to_f.to_s.gsub(".", "")
+    @file = MedicalFile.new(file_params)
+    @file.user_id = current_user.id
+    @file.file_id = Time.now.to_f.to_s.gsub(".", "")
 
-    if file.save
-      prescription = Prescription.new(photo: params[:medical_file][:prescriptions][:photo], medical_file_id: file.id)
+    if @file.save
+      # @prescription = Prescription.new(photos: params[:medical_file][:prescriptions][:photo], medical_file_id: file.id)
       redirect_to medical_files_path
     else
       Rails.logger.debug(file.errors.full_messages)
@@ -29,7 +29,11 @@ class MedicalFilesController < ApplicationController
   private
 
   def file_params
-    params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description, :photo, :user_id, :prescription, :test, :appointment, :vital_sign, :symptom, :medicine, :patient_sheet)
+    params.require(:medical_file).permit(
+      :name, :date, :treating_dr, :notes, :description,
+      prescriptions_attributes: [:id, :date, :assigned_dr, :description, photos: []],
+      tests_attributes: [:id, :name, photos: []]
+    )
   end
 
 end
