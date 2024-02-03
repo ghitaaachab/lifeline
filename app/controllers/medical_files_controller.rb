@@ -6,6 +6,8 @@ class MedicalFilesController < ApplicationController
 
   def new
     @file = MedicalFile.new
+    @file.prescriptions.build
+    @file.tests.build
   end
 
   def create
