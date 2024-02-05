@@ -21,8 +21,6 @@ class MedicalFilesController < ApplicationController
     @prescription.medical_file = @file
     @prescription.photos = params[:medical_file][:prescription_files]
 
-    raise
-
     unless @test.save
       flash[:alert] = "Failed to save the test file."
       return
