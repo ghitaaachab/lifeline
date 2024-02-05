@@ -22,24 +22,41 @@
       <div class="mf-title">Treating Doctor:</div>
       <div><%= @file.treating_dr %></div>
     </div>
-    <div class="details-container">
+    <div class="details-container ">
       <div class="details-section">
         <div class="mf-title">Prescriptions</div>
         <div class="mf-prescriptions">
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-        </div>
-      </div>
-      <div class="details-section">
-        <div class="mf-title">Tests</div>
-        <div class="mf-prescriptions">
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-          <div class="mf-image"></div>
-        </div>
+           <% @tests.each do |test| %>
+              <% test.photos.each do |photo| %>
+                <div data-controller="medicalfile-form">
+                  <div class="mf-image" >
+                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                  </div>
+                  <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
+                    <%= cl_image_tag(photo.key, height: 500, width: 500) %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="details-section">
+            <div class="mf-title">Tests</div>
+            <div class="mf-tests">
+            <% @prescriptions.each do |prescription| %>
+              <% prescription.photos.each do |photo| %>
+                <div data-controller="medicalfile-form">
+                  <div class="mf-image" >
+                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                  </div>
+                  <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
+                    <%= cl_image_tag(photo.key, height: 500, width: 500) %>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+
+    <div>
+    </div>
       </div>
     </div>
     <div class="mf-description">
@@ -50,5 +67,7 @@
       <div class="mf-title">Notes</div>
       <div class="mf-description-text"><%= @file.notes %></div>
     </div>
+  </div>
+</div>
   </div>
 </div>
