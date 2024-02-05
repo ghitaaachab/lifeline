@@ -6,17 +6,34 @@ class MedicalFilesController < ApplicationController
 
   def new
     @file = MedicalFile.new
-    @file.prescriptions.build
-    @file.tests.build
   end
 
   def create
     @file = MedicalFile.new(file_params)
-    @file.user_id = current_user.id
+    @file.user = current_user
     @file.file_id = Time.now.to_f.to_s.gsub(".", "")
 
+    @test = Test.new
+    @prescription = Prescription.new
+
+    @test.medical_file = @file
+    @test.photos = params[:medical_file][:test_files]
+    @prescription.medical_file = @file
+    @prescription.photos = params[:medical_file][:prescription_files]
+
+    raise
+
+    unless @test.save
+      flash[:alert] = "Failed to save the test file."
+      return
+    end
+
+    unless @prescription.save
+      flash[:alert] = "Failed to save the prescription File."
+      return
+    end
+
     if @file.save
-      # @prescription = Prescription.new(photos: params[:medical_file][:prescriptions][:photo], medical_file_id: file.id)
       redirect_to medical_files_path
     else
       Rails.logger.debug(file.errors.full_messages)
@@ -32,10 +49,6 @@ class MedicalFilesController < ApplicationController
 
   def file_params
     params.require(:medical_file).permit(
-      :name, :date, :treating_dr, :notes, :description,
-      prescriptions_attributes: [:id, :date, :assigned_dr, :description, photos: []],
-      tests_attributes: [:id, :name, photos: []]
-    )
+      :name, :date, :treating_dr, :notes, :description)
   end
-
 end

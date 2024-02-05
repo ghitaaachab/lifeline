@@ -10,10 +10,8 @@
   <%= f.input :date, label: "Enter your file date" %>
   <%= f.input :description,  :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "File description" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
-  <%= f.simple_fields_for :prescriptions do |prescription_form| %>
-  <%= prescription_form.input_field :photos, as: :file, multiple: true %><% end %>
-  <%= f.simple_fields_for :tests do |test_form| %>
-  <%= test_form.input_field :photos, as: :file, multiple: true %><% end %>
+  <%= f.input_field :test_files, as: :file, multiple: true %>
+  <%= f.input_field :prescription_files, as: :file, multiple: true %>
   <%= f.input :notes, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>
