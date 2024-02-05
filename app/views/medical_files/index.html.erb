@@ -34,4 +34,3 @@
     <div class="msg-nomedicalfile">You have 0 Medical files.</div>
   <% end %>
 </div>
-<%= cl_image_tag @files.last.prescriptions.last.photo.key, height: 300, width: 400, crop: :fill if !@files.last.prescriptions.last.blank? %>
