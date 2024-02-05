@@ -35,12 +35,12 @@ li {
   align-items: center; /* Align items vertically in the center */
 }
 
-.symptom-description {
+.medicine-name{
   font-weight: bold;
   flex: 1;
 }
 
-.symptom-date {
+.medicine-date {
   color: #888;
   font-size: 0.9em;
   margin-right: 10px; /* Adjust the margin to separate date and delete button */
@@ -62,4 +62,12 @@ li {
 .delete-link:hover {
   background-color: #8f55f4;
   color: #fff;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #7C3AED;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
