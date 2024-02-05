@@ -1,0 +1,6 @@
+var deletedElement = document.getElementById("symptom_<%= @medicine.id %>");
+
+// Check if the element exists before attempting to remove it
+if (deletedElement) {
+  deletedElement.parentNode.removeChild(deletedElement);
+}
