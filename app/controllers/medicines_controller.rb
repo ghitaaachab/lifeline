@@ -5,9 +5,10 @@ class MedicinesController < ApplicationController
   end
 
   def create
-    @medicine = current_user.medicines.build(medicine_params)
+    @medicine = Medicine.new(medicine_params)
+    @medicine.user = current_user
 
-    if @medicine.save
+    if @medicine.save!
       redirect_to medicines_path, notice: "Medicine added successfully."
     else
       flash.now[:alert] = "Failed to add medicine."
@@ -28,7 +29,7 @@ class MedicinesController < ApplicationController
 
   private
 
-  def symptom_params
+  def medicine_params
     params.require(:medicine).permit(:name, :start_date, :end_date, :notes)
   end
 end

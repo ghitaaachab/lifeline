@@ -1,27 +1,40 @@
-<!-- app/views/medicines/_form.html.erb -->
+<h1>Medicines</h1>
+<%= simple_form_for @new_medicine do |form| %>
+  <div class="cont" data-controller="controller">
+    <div class="field">
+      <%= form.text_field :name, placeholder: "Doliprane" %>
+    </div>
 
-<%= form_with(model: @medicine, url: medicines_path, method: :post, remote: true) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="field">
+      <%= form.datetime_local_field :start_date, id: "date-started" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :start_date %>
-    <%= form.datetime_local_field :start_date %>
-  </div>
+    <div class="field">
+      <%= form.datetime_local_field :end_date, id: "date-finished" %>
+    </div>
 
-  <div class="field">
-    <%= form.label :end_date %>
-    <%= form.datetime_local_field :end_date %>
-  </div>
+    <div class="field">
+      <%= form.label :notes %>
+      <%= form.text_area :notes %>
+    </div>
 
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Add", class: "btn" %>
+    <div class="actions">
+      <%= form.submit "Add", class: "btn", id: "submit" %>
+    </div>
   </div>
 <% end %>
+<ul>
+  <% @medicines.each do |medicine| %>
+    <li>
+      <div id="medicine_<%= medicine.id %>">
+        <span class="medicine-name"><%= medicine.name %></span>
+        <span class="medicine-date"><%= medicine.start_date %></span>
+      </div>
+      <div class="medicine-actions">
+        <%= form_with(model: medicine, url: medicine_path(medicine), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
+          <%= delete_form.submit "Delete", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
