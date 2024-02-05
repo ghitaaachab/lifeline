@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="medicalfile-form"
 
 export default class extends Controller {
-  static targets = ["modal"]
+  static targets = ["modal", "addmedicalfilebtn", "newmedicalfile"]
 
   connect() {
   }
