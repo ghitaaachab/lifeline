@@ -1,7 +1,11 @@
+div {
+  margin: 0;
+}
 
 .mf-container {
   margin: 0 20%;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   background-color: white;
   border-radius: 15px;
   padding: 20px 0px;
@@ -20,10 +24,15 @@
   font-size: 24px;
   display: flex;
   justify-content: space-between;
+  background-color: #5729a665;
+  color: rgba(255, 255, 255, 0.806);
+  border-radius: 5px;
+  height: 50px;
+  align-items: center;
 }
 
 .mf-name {
-  background-color: #7C3AED;
+  background-color: #7c3aed;
   color: white;
   padding: 10px;
   border-radius: 5px;
@@ -36,17 +45,14 @@
 .mf-details {
   padding: 10px 50px;
   font-size: 20px;
+  margin-bottom: auto;
+  margin-top: 20px;
 }
 
 .details-container {
   display: flex;
-  gap: 10%;
-  margin-top: 30px;
-}
-
-.details-section {
-  width: 45%;
-  margin-bottom: 0;
+  gap: 15%;
+  margin-top: 10px;
 }
 
 .details-infos {
@@ -57,13 +63,11 @@
   display: flex;
   align-items: center;
   padding: 20px;
+  background-color: #7c3aed37;
 }
 
-.details-infos div {
-  margin: 0;
-}
-
-.mf-prescriptions, .mf-tests {
+.mf-prescriptions,
+.mf-tests {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -73,32 +77,28 @@
 .mf-image {
   height: 80px;
   width: 80px;
-  background-color: #7C3AED;
+  background-color: #7c3aed;
   margin: 0;
   border-radius: 5px;
 }
 
 .back-btn {
   text-decoration: none;
-  font-size: 16x;
-  padding: 5px 15px;
+  height: 50px;
+  font-size: 24px;
+  padding: 0px 30px;
   display: flex;
   gap: 10px;
   align-items: center;
-  background-color: #7C3AED;
   width: fit-content;
-  color: white;
+  color: rgba(255, 255, 255, 0.806);
   border-radius: 5px;
-  margin-left: 10px;
 }
 
 .mf-description {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   padding: 20px;
-}
-
-.mf-description div {
-  margin: 0;
+  margin: 20px 0;
 }
 
 .mf-title {
@@ -114,13 +114,14 @@
 }
 
 .mf-view * {
-  color: #7C3AED;
+  color: #7c3aed;
   text-decoration: none;
 }
 
 .mfs-header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
 
 .msg-nomedicalfile {
@@ -129,4 +130,59 @@
 
 .medicalform {
   margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.upperdiv {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7c3aed;
+  color: white;
+  padding: 5px 15px;
+  gap: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0px 48px 10px 48px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.uppercontainer {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+#formdiv {
+  margin-top: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #e5d8fba4;
+  border-width: 10px;
+  padding: 15px;
+}
+
+input {
+  width: 350px;
+  border-radius: 7px;
+}
+
+.form-control {
+  background-color: #f4f4f4a7;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.form-select {
+  background-color: #f2ebfd;
+  border-radius: 10px;
+}
+
+form{
+  padding: 20px;
+}
+
+.btn{
+  width: 70%;
 }
