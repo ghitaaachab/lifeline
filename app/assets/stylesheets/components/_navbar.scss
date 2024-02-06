@@ -2,8 +2,14 @@ $primary-color: #7C3AED;
 
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background-color: linear-gradient(to bottom, #9C27B0, #6A5ACD); /* Adjust colors as desired */
+  color: #fff; /* Or adjust for sufficient contrast */
+
+  /* Other styles */
+  justify-content: space-between;
+  padding: 15px 0;
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;

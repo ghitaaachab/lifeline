@@ -1,0 +1,77 @@
+// Basic styling for form elements
+
+.mf-container {
+  margin: 0 20%;
+  border-radius: 15px;
+  padding: 20px 0px;
+  margin-bottom: 80px;
+}
+
+label {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input,
+select { // Include select elements for consistency
+  width: 70%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #7C3AED;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+// Placeholder styling for consistent appearance across browsers
+input::placeholder,
+select::placeholder {
+  color: #ad0909;
+  opacity: 1; /* Ensure placeholder is visible */
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: 1px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+// Additional styling for spacing and layout
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+// Optional: Add some padding to the form container
+.form-container {
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 20px; // Added padding for visual clarity
+}
+h1 {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+/* In your vital_signs.css file (or where you apply chart styles) */
+canvas[data-controller="chart"] {
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+}

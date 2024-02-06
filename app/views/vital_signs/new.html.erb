@@ -21,7 +21,7 @@
   <% @vital_signs.each do |vital_sign| %>
     <li>
       <div id="vital_sign_<%= vital_sign.id %>">
-        <span class="vital-label"><%= vital_sign.label %></span>
+        <% class="vital-label"><%= vital_sign.label %>
         <span class="vital-value"><%= vital_sign.value %></span>
       </div>
     </li>

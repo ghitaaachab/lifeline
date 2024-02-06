@@ -10,8 +10,9 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
+@import "components/footer";
 @import "pages/index";
-@import "pages/vital_sign";
 @import "pages/patient_sheet";
 
 @import "pages/symptoms";
