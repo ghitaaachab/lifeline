@@ -4,23 +4,24 @@
     <h1>Medical Files</h1>
     <div data-action="click->medicalfile-form#showform" data-medicalfile-form-target="addmedicalfilebtn" class="btn-signup">Add New Medical File</div>
   </div>
-  <div class="container-sm d-none medicalform" data-medicalfile-form-target="newmedicalfile">
+  <div id="formdiv" class="container-sm d-none medicalform" data-medicalfile-form-target="newmedicalfile">
 <%= simple_form_for(@file) do |f| %>
-  <%= f.input :name, label: "Name your Medical file" %>
-  <%= f.input :date, label: "Enter your file date" %>
-  <%= f.input :description,  :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "File description" %>
+  <%= f.input :name, label: "Medical file name" %>
+  <%= f.input :date, label: "Medical file date" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
-  <%= f.input_field :test_files, as: :file, multiple: true %>
-  <%= f.input_field :prescription_files, as: :file, multiple: true %>
-  <%= f.input :notes, label: "Notes" %>
+   <div class="container d-flex justify-content-center">
+      <div class= " inputdiv m-3"><%= f.input_field :test_files, as: :file, multiple: true %> </div>
+   <div class= " inputdiv m-3"><%= f.input_field :prescription_files, as: :file, multiple: true %> </div>
+   </div>
+  <%= f.input :notes, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>
 </div>
   <% if @files.present? %>
     <div class="container mt-4">
       <% @files.each do |medical_file| %>
-    <div class="mfs-list">
-        <div><p><%= medical_file.name %></p> <p><%= medical_file.created_at %></p></div>
+    <div class="mfs-list mt-4">
+        <div><p style="color: black;"><strong><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
         <div class="mf-view">
           <%= link_to medical_file_path(medical_file.file_id), class: "" do %>
             View Medical File
@@ -31,6 +32,6 @@
     <% end %>
   </div>
   <% else %>
-    <div class="msg-nomedicalfile">You have 0 Medical files.</div>
+    <div class="msg-nomedicalfile">You have 0 Medical Files.</div>
   <% end %>
 </div>

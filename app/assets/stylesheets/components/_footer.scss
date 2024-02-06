@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .unique-footer {
   background-color: #260c88; /* Light gray background */
   padding: 40px 0;
@@ -87,4 +88,25 @@
 
 .unique-footer .footer-social a:hover {
   color: #007bff; /* Blue on hover */
+=======
+.footer {
+  background-color: #f2f2f2;
+  color: #7C3AED;
+  padding: 20px;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #999;
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 14px;
+  margin-top: 10px;
+>>>>>>> master
 }

@@ -13,6 +13,58 @@
   cursor: pointer;
 }
 
+#input {
+  width: 100%;
+  display: block;
+  border: 1px solid #7C3AED;
+  font-size: 14px;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.lab1{
+  margin-top: 50px;
+}
+#date-started{
+  width: 100%;
+  display: block;
+  border: 1px solid #7C3AED;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#date-finished{
+  width: 100%;
+  display: block;
+  border: 1px solid #7C3AED;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .btn:hover {
   background-color: #8f55f4;
 }
@@ -21,19 +73,21 @@
 ul {
   list-style: none;
   padding: 0;
+  width: 100%;
 }
 
 li {
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 15px;
   margin: 10px 0;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Align items vertically in the center */
+  align-items: center;
 }
+
 
 .medicine-name{
   font-weight: bold;
@@ -46,7 +100,6 @@ li {
   margin-right: 10px; /* Adjust the margin to separate date and delete button */
 }
 
-/* Delete Link Styles */
 .delete-link {
   padding: 5px;
   border: none;
@@ -57,7 +110,11 @@ li {
   background-color: #7C3AED;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
+  box-sizing: border-box;
+  width: auto;
 }
+
+
 
 .delete-link:hover {
   background-color: #8f55f4;
@@ -66,8 +123,32 @@ li {
 
 textarea {
   width: 100%;
-  padding: 10px;
+  display: block;
   border: 1px solid #7C3AED;
-  border-radius: 4px;
+  font-size: 14px;
   box-sizing: border-box;
+
+  padding: 30px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added a subtle box shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
 }

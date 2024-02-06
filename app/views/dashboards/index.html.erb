@@ -1,25 +1,39 @@
 <%= stylesheet_link_tag "dashboard", "data-turbo-track": "reload" %>
-<%# <div>
-  <h1>Dashboard</h1>
-  <h2>Anything to add today?</h2>
-</div>
-
-<div>
-<ul>
-  <li>Medical Files</li>
-  <li>SVital Signs</li>
-  <li>Medicines</li>
-  <li>Appointments</li>
-  <li>Symptoms</li>
-  <li>Patient Sheet</li>
-</li>
-</ul>
-</div> %>
 
 <div class="dashboard">
   <%# Left Sidebar %>
   <div class="lpanel">
-    <div class="lpanel-infos">Infos</div>
+    <div class="lpanel-infos">
+      <div class="">
+        <%= cl_image_tag current_user.photo.key, height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
+      </div>
+      <div class="patient-name">
+        Boris Ghitus
+      </div>
+      <div class="patient-address">
+        <div>
+          25 years old
+        </div>
+        |
+        <div>
+          New York, USA
+        </div>
+      </div>
+      <div class="patient-summary">
+        <div>
+          <div>Blood</div>
+          <div>B+</div>
+        </div>
+        <div>
+          <div>Height</div>
+          <div>186cm</div>
+        </div>
+        <div>
+          <div>Weight</div>
+          <div>86kg</div>
+        </div>
+      </div>
+    </div>
     <div class="lpanel-details">Detailed Infos</div>
     <div class="emergency">Emergency</div>
   </div>
@@ -27,7 +41,9 @@
   <div class="rpanel">
     <div class="rpanel-header">
       <div class="rpanel-welcome">Welcome</div>
-      <div class="rpanel-report">Report</div>
+      <div class="rpanel-report">
+        Reports
+      </div>
     </div>
     <div class="rpanel-cards">
       <div class="rpanel-card">Medical Files</div>
@@ -41,3 +57,5 @@
     </div>
   </div>
 </div>
+
+<canvas data-controller="chart" data-chart-label-value="Blood Pressure" data-chart-vs-value='<%= @vital_signs.where(label: "Blood Pressure").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  ></canvas>
