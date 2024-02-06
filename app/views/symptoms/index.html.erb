@@ -1,10 +1,9 @@
-<h1>Symptoms</h1>
-
+<h1><img src="/assets/sym.png"> Symptoms</h1>
 <%= form_with(model: @new_symptom, url: symptoms_path, method: :post, remote: true) do |form| %>
   <div class="cont" data-controller="controller">
     <div class="field">
-      <%= form.label :description, class: "lab" %>
-      <%= form.text_field :description, class: "inp", placeholder: "Fever" %>
+      <%= form.label :description, class: "lab1" , id:"#txt" %>
+      <%= form.text_field :description, class: "inp", placeholder: "Fever" ,id:"input"%>
     </div>
 
     <div class="field">
