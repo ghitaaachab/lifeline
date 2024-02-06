@@ -69,15 +69,19 @@ div {
 }
 
 .rpanel-card {
+  display: flex;
+  flex-direction: column;
   min-width: 24%;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: rgba(255, 255, 255, 0.4);
   min-height: 250px;
   padding: 20px;
+  justify-content: space-between;
+
 }
 
 .rpanel-card:hover, .vitalsigns:hover, .appointments:hover {
-  transform: scale(1.025);
+  transform: scale(1);
   animation: pulse 0.15s ease-in-out forwards;
   animation-fill-mode: forwards;
 }
@@ -87,17 +91,19 @@ div {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.025);
+    transform: scale(1.01);
   }
 }
 
 .rpanel-welcome {
-  background-color: #7C3AED;
+  background-color: #1A4FBA;
   min-width: 74%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .rpanel-report {
-  background-color: #7C3AED;
+  background-color: #1A4FBA;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   width: 100%;
 }
@@ -140,4 +146,48 @@ div {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+.welcome-msg {
+  padding: 20px;
+}
+
+.welcome-message {
+  font-size: 48px;
+}
+
+.welcome-paragraph {
+  font-size: 20px;
+}
+
+.welcome-image {
+  width: 25%;
+}
+
+.medicalfile {
+  text-decoration: none;
+  color: black;
+}
+
+.medicalfiles-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.rpanel-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.action {
+  width: 100%;
+  text-align: center;
+  background-color: #7c3aed;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
 }

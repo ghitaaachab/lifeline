@@ -52,9 +52,9 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "cloudinary"
 gem "rqrcode"
-gem 'wkhtmltopdf-binary'
-gem 'wicked_pdf'
-
+# gem 'wkhtmltopdf-binary'
+# gem 'wicked_pdf'
+gem "prawn"
 
 group :development, :test do
   gem "dotenv-rails"

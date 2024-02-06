@@ -3,5 +3,6 @@ class DashboardsController < ApplicationController
 
   def index
     @vital_signs = VitalSign.all
+    @medical_files = MedicalFile.where(user: current_user)
   end
 end
