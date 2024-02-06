@@ -41,6 +41,8 @@ class MedicalFilesController < ApplicationController
 
   def show
     @file = MedicalFile.find_by(file_id: params[:id])
+    @tests = @file.tests
+    @prescriptions = @file.prescriptions
   end
 
   private
