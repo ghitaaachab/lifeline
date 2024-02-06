@@ -45,10 +45,15 @@ class MedicalFilesController < ApplicationController
     @prescriptions = @file.prescriptions
   end
 
+  def destroy
+    @file = MedicalFile.find(params[:id])
+    @file.destroy if @file.present?
+    redirect_to medical_files_path, status: :see_other
+  end
+
   private
 
   def file_params
-    params.require(:medical_file).permit(
-      :name, :date, :treating_dr, :notes, :description)
+    params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description)
   end
 end

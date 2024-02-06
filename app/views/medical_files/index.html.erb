@@ -12,7 +12,7 @@
    <div class="container d-flex justify-content-center">
       <div class= " inputdiv m-3"><%= f.input_field :test_files, as: :file, multiple: true %> </div>
    <div class= " inputdiv m-3"><%= f.input_field :prescription_files, as: :file, multiple: true %> </div>
-   </div>
+   </div> 
   <%= f.input :notes, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>
