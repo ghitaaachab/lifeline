@@ -76,6 +76,21 @@ div {
   padding: 20px;
 }
 
+.rpanel-card:hover, .vitalsigns:hover, .appointments:hover {
+  transform: scale(1.025);
+  animation: pulse 0.15s ease-in-out forwards;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.025);
+  }
+}
+
 .rpanel-welcome {
   background-color: #7C3AED;
   min-width: 74%;
