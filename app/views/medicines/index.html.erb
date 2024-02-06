@@ -1,16 +1,19 @@
-<h1>Medicines</h1>
+<h1><img src="/assets/med.png"> Medicines</h1>
 <%= simple_form_for @new_medicine do |form| %>
   <div class="cont" data-controller="controller">
     <div class="field">
-      <%= form.text_field :name, placeholder: "Doliprane" %>
+    <%= form.label :Name, class: "lab1" %>
+      <%= form.text_field :name, placeholder: "Doliprane" , id:"txt"%>
+    </div>
+
+   <div class="field">
+      <%= form.label :Start_date, class: "lab" %>
+      <%= form.datetime_local_field :start_date, class: "inp", id: "date-started" %>
     </div>
 
     <div class="field">
-      <%= form.datetime_local_field :start_date, id: "date-started" %>
-    </div>
-
-    <div class="field">
-      <%= form.datetime_local_field :end_date, id: "date-finished" %>
+      <%= form.label :End_date, class: "lab" %>
+      <%= form.datetime_local_field :end_date, class: "inp", id: "date-finished" %>
     </div>
 
     <div class="field">

@@ -16,6 +16,7 @@
 
 @import "pages/symptoms";
 @import "pages/medicines";
+@import "components/footer";
 
 
 $primary-bg: #F6F4F6;
@@ -24,4 +25,8 @@ $primary-color: #7C3AED;
 body {
   background-color: $primary-bg;
   margin: 0px 150px;
+}
+
+.main-cont {
+  min-height: 100vh
 }
