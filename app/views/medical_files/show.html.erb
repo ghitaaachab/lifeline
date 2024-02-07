@@ -28,7 +28,7 @@
           <div class="mf-title">Prescriptions</div>
            <% @tests.each do |test| %>
               <% test.photos.each do |photo| %>
-                <div class="picdiv d-inline-flex p-2 bd-highlight">
+                <div id= "picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
                       <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
@@ -45,7 +45,7 @@
             <div class="mf-title">Tests</div>
             <% @prescriptions.each do |prescription| %>
               <% prescription.photos.each do |photo| %>
-                <div class="picdiv d-inline-flex p-2 bd-highlight">
+                <div id = "picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
                       <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
@@ -57,7 +57,7 @@
                 </div>
               <% end %>
             <% end %>
-    <div>  
+    <div>
     </div>
       </div>
 

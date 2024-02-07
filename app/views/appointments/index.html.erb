@@ -10,23 +10,19 @@
       <%= form.label :date, class: "lab" %>
        <%= form.datetime_local_field :date, class: "inp", id: "date-started" %>
     </div>
-
-
-
     <div class="actions">
       <%= form.submit "Add", class: "btn", id: "submit" %>
     </div>
   </div>
 <% end %>
 
-
 <ul>
-  <% @appointments.each do |appointment| %>
+  <% @appointments.reverse_each do |appointment| %>
     <li id="lis">
 
       <div id="symptom_<%= appointment.id %>">
-        <span class="symptom-description"><%= appointment.doctor_name %></span>
-        <span class="symptom-date"><%= appointment.date %></span>
+       <span class="symptom-description">Upcoming appointment with <strong><%= appointment.doctor_name.capitalize %></strong></span>
+       <span class="symptom-date">at: <strong><%= appointment.date %></strong></span>
       </div>
       <div class="symptom-actions">
         <%= form_with(model: appointment, url: appointment_path(appointment), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
@@ -36,3 +32,4 @@
     </li>
   <% end %>
 </ul>
+

@@ -75,9 +75,9 @@ div {
 }
 
 .mf-image {
-  height: 80px;
-  width: 80px;
-  background-color: #7c3aed;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
   margin: 0;
   border-radius: 5px;
 }
@@ -195,3 +195,12 @@ form{
   margin-top: 10px;
   width: 100%;
 }
+
+#picdiv{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: #e5d8fba4;
+  padding: 15px;
+}
+

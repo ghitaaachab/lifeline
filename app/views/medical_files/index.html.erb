@@ -12,14 +12,14 @@
    <div class="container d-flex justify-content-center">
       <div class= " inputdiv m-3"><%= f.input_field :test_files, as: :file, multiple: true %> </div>
    <div class= " inputdiv m-3"><%= f.input_field :prescription_files, as: :file, multiple: true %> </div>
-   </div> 
+   </div>
   <%= f.input :notes, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "Notes" %>
   <%= f.button :submit, class: "btn-signup" %>
 <% end %>
 </div>
   <% if @files.present? %>
     <div class="container mt-4">
-      <% @files.each do |medical_file| %>
+      <% @files.reverse_each do |medical_file| %>
     <div class="mfs-list mt-4">
         <div><p style="color: black;"><strong><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
         <div class="mf-view">
