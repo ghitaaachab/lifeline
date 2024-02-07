@@ -1,8 +1,10 @@
 <%= stylesheet_link_tag "medical_file", "data-turbo-track": "reload" %>
 <div class="mfs-container" data-controller="medicalfile-form">
   <div class="mfs-header">
-    <h1>Medical Files</h1>
-    <div data-action="click->medicalfile-form#showform" data-medicalfile-form-target="addmedicalfilebtn" class="btn-signup">Add New Medical File</div>
+    <h1 class="mfs-title">Medical Files</h1>
+    <div data-action="click->medicalfile-form#showform" data-medicalfile-form-target="addmedicalfilebtn" class="add-medicalfile">
+      Add New Medical File
+    </div>
   </div>
   <div id="formdiv" class="container-sm d-none medicalform" data-medicalfile-form-target="newmedicalfile">
 <%= simple_form_for(@file) do |f| %>
@@ -10,11 +12,11 @@
   <%= f.input :date, label: "Medical file date" %>
   <%= f.input :treating_dr, label: "Treating Doctor" %>
    <div class="container d-flex justify-content-center">
-      <div class= " inputdiv m-3"><%= f.input_field :test_files, as: :file, multiple: true %> </div>
-   <div class= " inputdiv m-3"><%= f.input_field :prescription_files, as: :file, multiple: true %> </div>
+      <div class= "inputdiv m-3"><%= f.input_field :test_files, as: :file, multiple: true, class: "inputdiv" %> </div>
+   <div class= "inputdiv m-3"><%= f.input_field :prescription_files, as: :file, multiple: true, class: "inputdiv" %> </div>
    </div>
   <%= f.input :notes, :as => :text, :input_html => { 'rows' => 5, 'cols' => 10 }, label: "Notes" %>
-  <%= f.button :submit, class: "btn-signup" %>
+  <%= f.button :submit, class: "add-medicalfile longer" %>
 <% end %>
 </div>
   <% if @files.present? %>
