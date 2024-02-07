@@ -65,11 +65,16 @@
       <div class="mf-title">Notes</div>
       <div class="mf-description-text"><%= @file.notes %></div>
     </div>
+    <%= link_to "Preview Medical File", preview_medical_file_path %>
+    <%= link_to "Download Medical File", download_medical_file_path %>
+
+
     <%= link_to "Delete",
             medical_file_path(@file),
             method: :delete,
             data: { confirm: "Are you sure?" },
             class: "btn btn-danger deletebtn" %>
+
   </div>
 </div>
 </div>
