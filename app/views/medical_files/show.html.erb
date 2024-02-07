@@ -65,8 +65,10 @@
       <div class="mf-title">Notes</div>
       <div class="mf-description-text"><%= @file.notes %></div>
     </div>
-    <%= link_to "Preview Medical File", preview_medical_file_path %>
-    <%= link_to "Download Medical File", download_medical_file_path %>
+    <div class="pdf-actions">
+      <%= link_to "Preview Medical File", preview_medical_file_path, class: "pdf-action" %>
+      <%= link_to "Download Medical File", download_medical_file_path, class: "pdf-action" %>
+    </div>
 
 
     <%= link_to "Delete",
