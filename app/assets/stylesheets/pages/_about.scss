@@ -1,0 +1,51 @@
+/* Main heading */
+.ah1 {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  font-weight: bold; /* Corrected from "font:bold;" */
+}
+
+.ah2 {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  font-weight: bold; /* Corrected from "font:bold;" */
+}
+
+
+/* About section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: justify; /* Added text alignment */
+}
+
+/* Images */
+.rpanel-cardss,
+.lpanel-cardss {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 50%;
+}
+
+.rpanel-carrd,
+.lpanel-carrd {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Special Acknowledgment section */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 20px;
+}

@@ -26,9 +26,9 @@
     </div>
   </div>
 <% end %>
-<ul>
+<ul id="mul">
   <% @medicines.each do |medicine| %>
-    <li>
+    <li id="mil">
       <div id="medicine_<%= medicine.id %>">
         <span class="medicine-name"><%= medicine.name %></span>
         <span class="medicine-date"><%= medicine.start_date %></span>
