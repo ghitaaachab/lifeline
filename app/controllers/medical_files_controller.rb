@@ -51,6 +51,11 @@ class MedicalFilesController < ApplicationController
 
   def download
     pdf_report(:attachment)
+
+  def destroy
+    @file = MedicalFile.find(params[:id])
+    @file.destroy if @file.present?
+    redirect_to medical_files_path, status: :see_other
   end
 
   private
@@ -88,7 +93,9 @@ class MedicalFilesController < ApplicationController
     report.start_new_page
     report.text "Medical Prescriptions", size: 24, style: :bold, align: :center, leading: 40
 
-    prescription_images.each do |image|
+    prescription_images.each
+    
+    do |image|
       report.image(image, width: 500, position: :center)
     end
     report.start_new_page
@@ -108,7 +115,6 @@ class MedicalFilesController < ApplicationController
   end
 
   def file_params
-    params.require(:medical_file).permit(
-      :name, :date, :treating_dr, :notes, :description)
+    params.require(:medical_file).permit(:name, :date, :treating_dr, :notes, :description)
   end
 end

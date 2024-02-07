@@ -22,7 +22,7 @@ class SymptomsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to symptoms_path, notice: "Symptom deleted successfully." }
-      format.js   #
+      format.js
     end
   end
 
