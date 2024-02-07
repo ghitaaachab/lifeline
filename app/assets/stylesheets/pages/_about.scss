@@ -20,7 +20,8 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  text-align: justify; /* Added text alignment */
+  text-align: center; /* Changed to center alignment */
+  margin: 0 auto; /* Added margin to center the section */
 }
 
 /* Images */
@@ -48,4 +49,6 @@ h1 {
 /* Paragraphs */
 p {
   margin-bottom: 20px;
+  margin: 0 auto; /* Added margin to center the paragraphs */
+
 }
