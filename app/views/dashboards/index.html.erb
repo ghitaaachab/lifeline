@@ -2,48 +2,15 @@
 
 <div class="dashboard">
   <%# Left Sidebar %>
-  <div class="lpanel">
-    <div class="lpanel-infos">
-      <div class="">
-        <%= cl_image_tag current_user.photo.key, height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
-      </div>
-      <div class="patient-name">
-        Boris Ghitus
-      </div>
-      <div class="patient-address">
-        <div>
-          25 years old
-        </div>
-        |
-        <div>
-          New York, USA
-        </div>
-      </div>
-      <div class="patient-summary">
-        <div>
-          <div>Blood</div>
-          <div>B+</div>
-        </div>
-        <div>
-          <div>Height</div>
-          <div>186cm</div>
-        </div>
-        <div>
-          <div>Weight</div>
-          <div>86kg</div>
-        </div>
-      </div>
-    </div>
-    <div class="lpanel-details">Detailed Infos</div>
-    <div class="emergency">Emergency</div>
-  </div>
   <%# 2nd Siderbar %>
-  <div class="rpanel">
-    <div class="rpanel-header">
+  <div class="rpanel-header">
+      <div class="rpanel-report">
+        Patient Sheet Infos (Blood Type, Weight, Height, etc.)
+      </div>
       <div class="rpanel-welcome">
         <div class="welcome-msg">
           <div class="welcome-message">
-            Hello <%= current_user.first_name  %>
+            Hello <%= current_user.first_name.capitalize  %>
           </div>
           <div class="welcome-paragraph">
             Have a nice day and don’t forget to take care of your health!
@@ -53,35 +20,36 @@
 
         </div>
       </div>
-      <div class="rpanel-report">
-        Reports
-      </div>
     </div>
+  <div class="rpanel">
     <div class="rpanel-cards">
-      <div class="rpanel-card">
-        <div>Medical Files</div>
-        <div class="medicalfiles-list">
-        <% @medical_files.each do |medical| %>
-          <div class="medicalfile-wrapper">
-            <i class="fa-solid fa-file" style="color: #7c3aed;"></i>
-            <%= link_to medical.name, medical_file_path(medical.file_id), class: "medicalfile" %>
-          </div>
-        <% end %>
-        </div>
-        <div class="rpanel-actions">
-          <%= link_to "View my Medical Files", medical_files_path, class: "action" %>
-          <%= link_to "Add a new Medical File", medical_files_path, class: "action" %>
-        </div>
+    <%= link_to medical_files_path, class:"linkto" do %>
+    <div class="rpanel-card medicine" style="background-image: url('<%= image_url('shapeslol.png') %>'); background-size: cover;">
+        <i class="fa-solid fa-file-medical bg-icon"></i>
+          <div class="card-title">Medical Files</div>
       </div>
-      <div class="rpanel-card">Patient Sheet</div>
-      <div class="rpanel-card">Medicines</div>
-      <div class="rpanel-card">Symptoms</div>
     </div>
-    <div class="rpanel-bottom">
-      <div class="vitalsigns">Vital Signs</div>
-      <div class="appointments">Appointments</div>
+    <% end %>
+     <div class="rpanel-cards">
+     <%= link_to vital_signs_path, class:"linkto" do %>
+      <div class="rpanel-card vitalsigns"><i class="fa-solid fa-heart-pulse bg-icon"></i><div class="card-title">Vital Signs</div></div>
+    <% end %>
+    <%= link_to medicines_path, class:"linkto" do %>
+      <div class="rpanel-card medicines"><i class="fa-solid fa-capsules bg-icon"></i><div class="card-title">Medicines</div></div>
+    <% end %>
+    </div>
+  </div>
+  <div class="bpanel">
+    <div class="bpanel-cards">
+      <%= link_to medicines_path, class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-calendar-check bg-icon-bcard"></i><div class="card-title">Appointments</div></div>
+      <% end %>
+      <%= link_to patient_sheet_index_path , class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-hospital-user bg-icon-bcard"></i><div class="card-title">Patient Sheet</div></div>
+      <% end %>
+      <%= link_to symptoms_path, class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-head-side-cough bg-icon-bcard"></i><div class="card-title">Symptoms</div></div>
+      <% end %>
     </div>
   </div>
 </div>
-
-<canvas data-controller="chart" data-chart-label-value="Blood Pressure" data-chart-vs-value='<%= @vital_signs.where(label: "Blood Pressure").order(created_at: :desc).take(7).reverse.pluck(:value).to_json  %>'  ></canvas>

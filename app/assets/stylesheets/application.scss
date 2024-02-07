@@ -24,10 +24,12 @@ $primary-bg: #F6F4F6;
 $primary-color: #7C3AED;
 
 body {
-  background-color: $primary-bg;
+  background-image: linear-gradient(to right top, #002062, #005792, #008ca5, #3fbfa7, #b7ecac);
   margin: 0px 150px;
+  color: white;
 }
 
 .main-cont {
+
   min-height: 100vh
 }

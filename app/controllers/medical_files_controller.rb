@@ -96,8 +96,6 @@ class MedicalFilesController < ApplicationController
     prescription_images.each do |image|
       report.image(image, width: 500, position: :center)
     end
-
-
     report.start_new_page
     report.text "Medical Tests:", size: 24, style: :bold, align: :center, leading: 40
 

@@ -1,5 +1,5 @@
 footer {
-  color: black;
+  color: white;
   padding: 20px 0;
   margin-top: 20px;
   width: 100%;
@@ -37,7 +37,7 @@ footer {
 
 .footer-links a {
   text-decoration: none;
-  color: black; /* Adjust link color */
+  color: white; /* Adjust link color */
 }
 
 .footer-social ul {
@@ -49,6 +49,11 @@ footer {
 
 .footer-social li {
   margin-right: 10px;
+}
+
+.footer-social li a i{
+  color: white;
+  font-size: 24px;
 }
 
 .footer-bottom {

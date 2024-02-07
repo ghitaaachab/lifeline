@@ -2,6 +2,7 @@ div {
   margin: 0;
 }
 
+
 .mf-container {
   margin: 0 20%;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -109,8 +110,10 @@ div {
 .mfs-list {
   display: flex;
   justify-content: space-between;
+  background-color: rgba(255, 255, 255, 0.85);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  padding: 20px;
+  padding: 25px;
+  border-radius: 15px;
 }
 
 .mf-view * {
@@ -122,6 +125,7 @@ div {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
+  color: white;
 }
 
 .msg-nomedicalfile {
@@ -203,4 +207,3 @@ form{
   background-color: #e5d8fba4;
   padding: 15px;
 }
-
