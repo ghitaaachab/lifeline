@@ -51,6 +51,7 @@ class MedicalFilesController < ApplicationController
 
   def download
     pdf_report(:attachment)
+  end
 
   def destroy
     @file = MedicalFile.find(params[:id])
@@ -93,11 +94,10 @@ class MedicalFilesController < ApplicationController
     report.start_new_page
     report.text "Medical Prescriptions", size: 24, style: :bold, align: :center, leading: 40
 
-    prescription_images.each
-    
-    do |image|
+    prescription_images.each do |image|
       report.image(image, width: 500, position: :center)
     end
+
     report.start_new_page
     report.text "Medical Tests:", size: 24, style: :bold, align: :center, leading: 40
 
