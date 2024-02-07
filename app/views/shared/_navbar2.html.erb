@@ -5,10 +5,10 @@
     <% end %>
   </div>
   <div class="navbar-pages">
-    <div>Discover Lifeline</div>
-    <div>Services</div>
-    <div>About</div>
-    <div>Contact</div>
+     <%= link_to "Discover Lifeline", root_path, class: "navbar-links" %>
+     <%= link_to "Services", "#", class: "navbar-links" %>
+     <%= link_to "About", about_path, class: "navbar-links" %>
+     <%= link_to "Contact", "#", class: "navbar-links" %>
   </div>
   <div class="navbar-actions">
     <% if !user_signed_in? %>

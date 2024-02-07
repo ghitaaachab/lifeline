@@ -21,7 +21,7 @@
     <div class="container mt-4">
       <% @files.reverse_each do |medical_file| %>
     <div class="mfs-list mt-4">
-        <div><p style="color: black;"><strong><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
+        <div><p style="color: black;"><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
         <div class="mf-view">
           <%= link_to medical_file_path(medical_file.file_id), class: "" do %>
             View Medical File
