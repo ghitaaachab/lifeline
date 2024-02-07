@@ -23,9 +23,9 @@
 <% end %>
 
 
-<ul>
+<ul id="uls">
   <% @symptoms.each do |symptom| %>
-    <li>
+    <li id="lis">
       <div id="symptom_<%= symptom.id %>">
         <span class="symptom-description"><%= symptom.description %></span>
         <span class="symptom-date"><%= symptom.start_date %></span>
