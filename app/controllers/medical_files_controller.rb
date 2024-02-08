@@ -43,6 +43,8 @@ class MedicalFilesController < ApplicationController
     @file = MedicalFile.find_by(file_id: params[:id])
     @tests = @file.tests
     @prescriptions = @file.prescriptions
+<<<<<<< HEAD
+=======
   end
 
   def preview
@@ -57,6 +59,7 @@ class MedicalFilesController < ApplicationController
     @file = MedicalFile.find(params[:id])
     @file.destroy if @file.present?
     redirect_to medical_files_path, status: :see_other
+>>>>>>> master
   end
 
   private

@@ -6,14 +6,15 @@
 <div class="vs-form">
 
 <%= form_with(model:  @vital_sign, url: vital_signs_path, method: :post) do |form| %>
+
   <div>
     <%= form.label :label, 'Vital Sign' %>
-    <%= form.select :label, [['Blood Pressure (mmHg)', 'Blood Pressure'], ['Heart Rate (bpm)', 'Heart Rate'], ['Temperature (°C)', 'Temperature'], ['Blood Glucose (mg/dl)', 'Blood Sugar']], {}, { class: 'form-control' } %>
+    <%= form.select :label, [['Blood Pressure (mmHg)', 'Blood Pressure'], ['Heart Rate (bpm)', 'Heart Rate'], ['Temperature (°C)', 'Temperature'], ['Blood Glucose (mg/dl)', 'Blood Sugar']], { include_blank: true }, { placeholder: 'Choose your input', class: 'select' } %>
   </div>
 
   <div>
     <%= form.label :value, 'Value' %>
-    <%= form.text_field :value, class: 'form-control' %>
+    <%= form.text_field :value, class: 'select' %>
   </div>
 
   <div class= "mt-3">

@@ -15,4 +15,8 @@ export default class extends Controller {
   showImage() {
     this.modalTarget.classList.toggle("d-none");
   }
+
+  showImage(){
+    this.modalTarget.classList.toggle("d-none")
+  }
 }

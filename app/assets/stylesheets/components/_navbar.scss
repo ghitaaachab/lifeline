@@ -20,10 +20,29 @@ div {
 
 .navbar-custom {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0px;
+  padding: 15px 20px;
+  background-color: #7C3AED; /* Adjust as needed */
+}
+
+.navbar-logo-and-icon {
+  display: flex;
+  align-items: center; /* Vertically align logo and icon */
+}
+
+.navbar-logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-right: 10px; /* Add spacing between logo and icon */
+}
+
+.notification-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .navbar-pages {
@@ -32,13 +51,17 @@ div {
   align-items: center;
   gap: 40px;
 }
+.navbar-pages div, /* Apply styles to all divs within .navbar-pages */
+.navbar-actions div {
+    margin-right: 20px;
+    color: #fff; /* White text */
+    font-size: 16px;
+    margin-top: 5px;
+  }
 
 .navbar-actions {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
+  align-items: center; /* Add this line to align items vertically */
 }
 
 .navbar-pages * {
@@ -57,9 +80,8 @@ div {
   background-color: $primary-color;
   padding: 10px 18px;
   border-radius: 5px;
-  color: white;
-  cursor: pointer;
-  text-decoration: none;
+  margin-right: 10px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .navbar-logo {

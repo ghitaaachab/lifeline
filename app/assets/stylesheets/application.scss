@@ -9,13 +9,15 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
+@import "components/footer";
 @import "pages/index";
-@import "pages/vital_sign";
 @import "pages/patient_sheet";
 
 @import "pages/symptoms";
 @import "pages/medicines";
 @import "components/footer";
+@import "pages/review";
 @import "pages/about";
 @import "pages/appointments";
 
@@ -37,4 +39,8 @@ body {
 
 .main-cont {
   min-height: 100vh;
+}
+
+.main-cont {
+  min-height: 100vh
 }
