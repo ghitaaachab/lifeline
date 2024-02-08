@@ -3,16 +3,8 @@
   text-align: center;
   margin: 20px auto;
   max-width: 800px;
-  font-weight: bold; /* Corrected from "font:bold;" */
+  font-weight: bold;
 }
-
-.ah2 {
-  text-align: center;
-  margin: 20px auto;
-  max-width: 800px;
-  font-weight: bold; /* Corrected from "font:bold;" */
-}
-
 
 /* About section */
 .about {
@@ -20,8 +12,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  text-align: center; /* Changed to center alignment */
-  margin: 0 auto; /* Added margin to center the section */
+  text-align: justify;
 }
 
 /* Images */
@@ -41,14 +32,13 @@
 }
 
 /* Special Acknowledgment section */
-h1 {
+.ah2 {
   text-align: center;
   margin: 20px 0;
 }
 
 /* Paragraphs */
-p {
-  margin-bottom: 20px;
-  margin: 0 auto; /* Added margin to center the paragraphs */
-
+.pabout {
+  text-align: center; /* Center the paragraphs */
+  margin: 50px 50px; /* Add margin to the left and right sides */
 }
