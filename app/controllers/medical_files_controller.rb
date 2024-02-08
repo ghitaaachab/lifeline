@@ -63,6 +63,7 @@ class MedicalFilesController < ApplicationController
 
   def pdf_report(disposition)
     @file = MedicalFile.find_by(file_id: params[:id])
+    @patient_sheet = PatientSheet.find_by(user_id: @file.user_id)
     birth_date = @file.user.date_of_birth
     age_str = calculate_age(birth_date)
     test_images = []
@@ -71,10 +72,12 @@ class MedicalFilesController < ApplicationController
     report = Prawn::Document.newgit
     report.text "", leading: 10
     report.text "#{@file.name}", size: 30, style: :bold, align: :center, leading: 40
+    report.text @file.created_at.strftime("%B %d, %Y"), leading: 15, align: :right
     report.text "#{@file.user.first_name} #{@file.user.last_name}"
     report.text "#{@file.user.address}"
     report.text "#{age_str}"
-    report.text @file.created_at.strftime("%B %d, %Y"), leading: 40
+    report.text "Weight: #{@patient_sheet.weight} kg, Height: #{@patient_sheet.height} cm"
+    report.text "Blood Type: #{@patient_sheet.blood_type}", leading: 40
     report.text "Treating Doctor: #{@file.treating_dr}", leading: 30, style: :bold
     report.text @file.notes, leading: 20
 
