@@ -11,6 +11,10 @@ div {
   border-radius: 10px;
 }
 
+.vs-container label {
+  margin-top: 20px;
+}
+
 .vs-container select {
   border-radius: 10px;
 }
@@ -77,5 +81,13 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+canvas {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  width: 100%;
+  height: 400px;
 }

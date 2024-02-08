@@ -185,3 +185,18 @@ h1 {
 .medicines-form {
   margin: 0 10%;
 }
+
+.appointments-list {
+  margin-top: 30px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#lis {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+  font-size: 20px;
+  padding: 20px 10px;
+}

@@ -31,12 +31,13 @@ export default class ChartController extends Controller {
             label: this.labelValue,
             data: JSON.parse(this.vsValue),
             fill: false, // Adjust as needed
-            borderColor: "white", // Use colors from `chartColors` if available
+            borderColor: "#002162bb", // Use colors from `chartColors` if available
             tension: 0.1, // Or other styling options from `chartColors`
           },
         ],
       },
       options: {
+        backgroundColor: "white",
         responsive: false, // Prevent automatic resizing
         width: 800, // Apply custom width
         height: 800, // Apply custom height
@@ -55,7 +56,7 @@ export default class ChartController extends Controller {
 
     // Update chart with custom styles
     if (colorConfig.borderColor) {
-      this.chart.defaults.borderColor = colorConfig.borderColor;
+      this.chart.defaults.borderColor = "white";
     }
     // Update other styling options as needed based on `colorConfig`
 

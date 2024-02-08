@@ -1,4 +1,5 @@
-<h1><img src="/assets/sym.png"> Appointments</h1>
+<div class="medicines-container">
+<h1 style="color: white; font-size: 28px;" class="mb-5">Appointments</h1>
 <%= form_with(model: @new_appointment, url: appointments_path, method: :post, remote: true) do |form| %>
   <div class="cont" data-controller="controller">
     <div class="field">
@@ -11,12 +12,12 @@
        <%= form.datetime_local_field :date, class: "inp", id: "date-started" %>
     </div>
     <div class="actions">
-      <%= form.submit "Add", class: "btn", id: "submit" %>
+      <%= form.submit "Add Appointment", class: "add-medicine", id: "submit" %>
     </div>
   </div>
 <% end %>
 
-<ul>
+<ul class="appointments-list">
   <% @appointments.reverse_each do |appointment| %>
     <li id="lis">
 
@@ -32,3 +33,4 @@
     </li>
   <% end %>
 </ul>
+</div>
