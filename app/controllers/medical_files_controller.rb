@@ -68,7 +68,7 @@ class MedicalFilesController < ApplicationController
     test_images = []
     prescription_images = []
 
-    report = Prawn::Document.new
+    report = Prawn::Document.newgit
     report.text "", leading: 10
     report.text "#{@file.name}", size: 30, style: :bold, align: :center, leading: 40
     report.text "#{@file.user.first_name} #{@file.user.last_name}"
