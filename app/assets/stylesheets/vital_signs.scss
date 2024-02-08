@@ -1,7 +1,7 @@
 // Basic styling for form elements
 
 .mf-container {
-  margin: 0 20%;
+  margin: 0 30%;
   border-radius: 15px;
   padding: 20px 0px;
   margin-bottom: 80px;
@@ -72,6 +72,6 @@ img {
 }
 /* In your vital_signs.css file (or where you apply chart styles) */
 canvas[data-controller="chart"] {
-  width: 40px; /* Adjust width as needed */
-  height: 40px; /* Adjust height as needed */
+  width: 3px;
+  height: 3px;
 }

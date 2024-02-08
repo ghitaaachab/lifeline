@@ -5,7 +5,11 @@
   <div class="lpanel">
     <div class="lpanel-infos">
       <div class="">
-        <%= cl_image_tag current_user.photo.key, height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
+        <% if current_user.photo.key.blank? %>
+          <%= image_tag "logo.png", height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
+        <% else %>
+          <%= cl_image_tag current_user.photo.key, height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
+        <% end %>
       </div>
       <div class="patient-name">
         Boris Ghitus

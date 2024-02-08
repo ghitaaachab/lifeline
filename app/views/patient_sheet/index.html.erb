@@ -37,14 +37,33 @@
     <%= form.label :current_tt,  'Current treatment ' %>
     <%= form.text_field :value, class: 'input' %>
   </div>
+   <div class="mf-allergies">
+       <h2>Allergies</h2>
+        <%= form.fields_for :allergies do |allergy_form| %>
+        <%= allergy_form.label :type, 'Allergy type' %>
+      <%= allergy_form.text_field :type, class: 'allergy-input' %>
+      <button type="button" class="add-allergy">Add another allergy</button>
+      <br>
+       <% end %>
+  </div>
+
+  <div class="mf-diseases">
+    <h2>Diseases</h2>
+    <%= form.fields_for :diseases do |disease_form| %>
+      <%= disease_form.label :name, 'Disease name' %>
+      <%= disease_form.text_field :name, class: 'disease-input' %>
+      <button type="button" class="add-disease">Add another disease</button>
+      <br>
+       <% end %>
+  </div>
 
   <div>
-    <%= form.label :emergency_contact_name , 'Contact name ' %>
+    <%= form.label :emergency_contact_name , 'Emergency contact name ' %>
     <%= form.text_field :value, class: 'input' %>
   </div>
 
   <div>
-    <%= form.label :emergency_contact_number , 'Contact number ' %>
+    <%= form.label :emergency_contact_number , 'Emergency contact number ' %>
     <%= form.text_field :value, class: 'input' %>
   </div>
 
