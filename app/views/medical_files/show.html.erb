@@ -14,13 +14,13 @@
   </div>
   </div>
   <div class="mf-name">
-    <%= @file.name %>
+    <%= @file.name.capitalize %>
   </div>
   </div>
   <div class="mf-details">
     <div class="details-infos">
-      <div class="mf-title">Treating Doctor:</div>
-      <div><%= @file.treating_dr %></div>
+      <div class="doc-title">Treating Doctor:</div>
+      <div>Dr. <%= @file.treating_dr.capitalize %></div>
     </div>
     <div class="details-container ">
       <div class="details-section">
@@ -28,10 +28,10 @@
           <div class="mf-title">Prescriptions</div>
            <% @tests.each do |test| %>
               <% test.photos.each do |photo| %>
-                <div id= "picdiv" class="d-inline-flex p-2 bd-highlight">
+                <div id="picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
-                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                      <%= cl_image_tag(photo.key, height: 100, width: 100, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
                   <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
                     <%= cl_image_tag(photo.key, height: 500, width: 500) %>
@@ -48,7 +48,7 @@
                 <div id = "picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
-                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'x img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
                   <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
                     <%= cl_image_tag(photo.key, height: 500, width: 500) %>
@@ -70,13 +70,13 @@
       <%= link_to "Download Medical File", download_medical_file_path, class: "pdf-action" %>
     </div>
 
-
+    <div class="delete-action">
     <%= link_to "Delete",
             medical_file_path(@file),
             method: :delete,
             data: { confirm: "Are you sure?" },
             class: "btn btn-danger deletebtn" %>
-
+    </div>
   </div>
 </div>
 </div>

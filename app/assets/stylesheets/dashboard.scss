@@ -1,7 +1,6 @@
 div {
   margin: 0;
   border-radius: 20px;
-
 }
 
 .dashboard {
@@ -23,7 +22,8 @@ div {
   min-height: 220px;
   border-radius: 15px;
   padding: 20px 40px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   display: flex;
   flex-direction: column;
   background-color: rgba(255, 255, 255, 0.4);
@@ -33,7 +33,8 @@ div {
 
 .lpanel-details {
   min-height: 410px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: rgba(255, 255, 255, 0.4);
   padding: 20px;
 }
@@ -41,7 +42,8 @@ div {
 .emergency {
   min-height: 120px;
   padding: 20px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -58,10 +60,22 @@ div {
   gap: 1%;
 }
 
-.rpanel-welcome, .rpanel-report{
+.rpanel-welcome {
+  background-color: #194eba;
+  padding: 27px;
+  font-size: 18px;
+  color: white;
+}
+
+.rpanel-report {
   // background-color: #1A4FBA;
-  background-color: #194EBA;
-  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  background-color: #194eba;
+  padding: 27px;
+  font-size: 18px;
   color: white;
 }
 
@@ -79,7 +93,8 @@ div {
   display: flex;
   flex-direction: column;
   min-width: 32.3%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: rgba(255, 255, 255, 0.4);
   min-height: 180px;
   padding: 20px;
@@ -90,14 +105,17 @@ div {
   display: flex;
   flex-direction: column;
   min-width: 49%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   background-color: rgba(255, 255, 255, 0.4);
   min-height: 180px;
   padding: 20px;
   justify-content: space-between;
 }
 
-.rpanel-card:hover, .vitalsigns:hover, .appointments:hover {
+.rpanel-card:hover,
+.vitalsigns:hover,
+.appointments:hover {
   transform: scale(1);
   animation: pulse 0.15s ease-in-out forwards;
   animation-fill-mode: forwards;
@@ -113,15 +131,16 @@ div {
 }
 
 .rpanel-welcome {
-  background-color: #1A4FBA;
+  background-color: #1a4fba97;
   min-width: 74%;
   display: flex;
   justify-content: space-between;
 }
 
 .rpanel-report {
-  background-color: #1A4FBA;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: #1a4fba97;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   width: 100%;
 }
 
@@ -134,7 +153,8 @@ div {
 .vitalsigns {
   min-width: 49%;
   background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   padding: 20px;
 }
 
@@ -142,7 +162,8 @@ div {
   min-width: 24%;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .patient-avatar {
@@ -199,7 +220,6 @@ div {
   opacity: 0.45;
 }
 
-
 .bg-icon-bcard {
   position: absolute;
   font-size: 64px;
@@ -207,7 +227,6 @@ div {
   bottom: 15%;
   opacity: 0.45;
 }
-
 
 .patient-summary {
   display: flex;
@@ -262,4 +281,13 @@ div {
 .card-title {
   font-size: 40px;
   font-weight: 600;
+  text-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.6);
+}
+
+.bg-icon-pcard {
+  position: absolute;
+  font-size: 64px;
+  right: 30px;
+  top: 10%;
+  opacity: 0.45;
 }

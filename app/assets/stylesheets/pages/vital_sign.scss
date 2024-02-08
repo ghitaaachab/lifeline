@@ -3,6 +3,22 @@ div {
   margin-bottom: 20px;
 }
 
+.vs-container {
+  margin: 50px 15%;
+}
+
+.vs-container input {
+  border-radius: 10px;
+}
+
+.vs-container label {
+  margin-top: 20px;
+}
+
+.vs-container select {
+  border-radius: 10px;
+}
+
 label {
   display: block;
   font-size: 16px;
@@ -14,7 +30,7 @@ input {
   width: 100%;
   padding: 8px;
   font-size: 14px;
-  border: 1px solid #7C3AED;
+  border: 1px solid #7c3aed;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -43,4 +59,35 @@ body {
 .form-container {
   max-width: 400px;
   margin: 0 auto;
+}
+
+.vs-form {
+  margin: 0 10%;
+}
+
+.add-vs {
+  margin: auto 0;
+  background-color: #002162bb;
+  padding: 10px 18px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  height: fit-content;
+}
+
+.vs-charts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+canvas {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  width: 100%;
+  height: 400px;
 }
