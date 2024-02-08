@@ -3,7 +3,6 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
-
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
@@ -19,14 +18,27 @@
 @import "pages/medicines";
 @import "components/footer";
 @import "pages/review";
+@import "pages/about";
+@import "pages/appointments";
 
-
-$primary-bg: #F6F4F6;
-$primary-color: #7C3AED;
+$primary-bg: #f6f4f6;
+$primary-color: #7c3aed;
 
 body {
-  background-color: $primary-bg;
+  background-image: linear-gradient(
+    to right top,
+    #002062,
+    #005792,
+    #008ca5,
+    #3fbfa7,
+    #b7ecac
+  );
   margin: 0px 150px;
+  color: white;
+}
+
+.main-cont {
+  min-height: 100vh;
 }
 
 .main-cont {

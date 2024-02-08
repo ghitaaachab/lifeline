@@ -1,0 +1,44 @@
+/* Main heading */
+.ah1 {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  font-weight: bold;
+}
+
+/* About section */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: justify;
+}
+
+/* Images */
+.rpanel-cardss,
+.lpanel-cardss {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 50%;
+}
+
+.rpanel-carrd,
+.lpanel-carrd {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Special Acknowledgment section */
+.ah2 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Paragraphs */
+.pabout {
+  text-align: center; /* Center the paragraphs */
+  margin: 50px 50px; /* Add margin to the left and right sides */
+}

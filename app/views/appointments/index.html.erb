@@ -1,1 +1,36 @@
-<h1>aPPOINTMENTS</h1>
+<div class="medicines-container">
+<h1 style="color: white; font-size: 28px;" class="mb-5">Appointments</h1>
+<%= form_with(model: @new_appointment, url: appointments_path, method: :post, remote: true) do |form| %>
+  <div class="cont" data-controller="controller">
+    <div class="field">
+      <%= form.label :doctor_name, class: "lab1" , id:"#txt" %>
+      <%= form.text_field :doctor_name, class: "inp", placeholder: "Enter Dr name" ,id:"input"%>
+    </div>
+
+    <div class="field">
+      <%= form.label :date, class: "lab" %>
+       <%= form.datetime_local_field :date, class: "inp", id: "date-started" %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Add Appointment", class: "add-medicine", id: "submit" %>
+    </div>
+  </div>
+<% end %>
+
+<ul class="appointments-list">
+  <% @appointments.reverse_each do |appointment| %>
+    <li id="lis">
+
+      <div id="symptom_<%= appointment.id %>">
+       <span class="symptom-description">Upcoming appointment with <strong><%= appointment.doctor_name.capitalize %></strong></span>
+       <span class="symptom-date">at: <strong><%= appointment.date %></strong></span>
+      </div>
+      <div class="symptom-actions">
+        <%= form_with(model: appointment, url: appointment_path(appointment), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
+          <%= delete_form.submit "Delete", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+</div>

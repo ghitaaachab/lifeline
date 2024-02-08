@@ -21,14 +21,13 @@
     </div>
   </div>
 <% end %>
-
-
 <ul>
-  <% @symptoms.each do |symptom| %>
+  <% @symptoms.reverse_each do |symptom| %>
     <li>
       <div id="symptom_<%= symptom.id %>">
-        <span class="symptom-description"><%= symptom.description %></span>
-        <span class="symptom-date"><%= symptom.start_date %></span>
+        <span class="symptom-description">Experienced <strong><%= symptom.description %></strong></span>
+        <span class="symptom-date">from: <strong><%= symptom.start_date %></strong></span>
+        <span class="symptom-date">to: <strong><%= symptom.end_date %></strong></span>
       </div>
       <div class="symptom-actions">
         <%= form_with(model: symptom, url: symptom_path(symptom), method: :delete, remote: true, class: "delete-form") do |delete_form| %>

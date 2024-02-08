@@ -2,62 +2,63 @@
 
 <div class="dashboard">
   <%# Left Sidebar %>
-  <div class="lpanel">
-    <div class="lpanel-infos">
-      <div class="">
-        <% if current_user.photo.key.blank? %>
-          <%= image_tag "logo.png", height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
-        <% else %>
-          <%= cl_image_tag current_user.photo.key, height: 70, width: 70, crop: :fill,  class: "patient-avatar", alt: "dropdown menu" %>
-        <% end %>
-      </div>
-      <div class="patient-name">
-        Boris Ghitus
-      </div>
-      <div class="patient-address">
-        <div>
-          25 years old
-        </div>
-        |
-        <div>
-          New York, USA
-        </div>
-      </div>
-      <div class="patient-summary">
-        <div>
-          <div>Blood</div>
-          <div>B+</div>
-        </div>
-        <div>
-          <div>Height</div>
-          <div>186cm</div>
-        </div>
-        <div>
-          <div>Weight</div>
-          <div>86kg</div>
-        </div>
-      </div>
-    </div>
-    <div class="lpanel-details">Detailed Infos</div>
-    <div class="emergency">Emergency</div>
-  </div>
   <%# 2nd Siderbar %>
-  <div class="rpanel">
-    <div class="rpanel-header">
-      <div class="rpanel-welcome">Welcome</div>
+  <div class="rpanel-header">
       <div class="rpanel-report">
-        Reports
+      <i class="fa-solid fa-id-card-clip bg-icon-pcard"></i>
+        <div>
+          <div><strong>Treating Doctor: </strong>Dr. <%= @patient_sheet.current_dr.capitalize %></div>
+          <div><strong>Current Treating:</strong> <%= @patient_sheet.current_tt.capitalize %></div>
+        </div>
+        <div>
+          <div><strong>Weight:</strong> <%= @patient_sheet.weight %> <strong>kgs</strong></div>
+          <div><strong>Height:</strong> <%= @patient_sheet.height %> <strong>cms</strong></div>
+          <div><strong>Blood Type:</strong> <%= @patient_sheet.blood_type %></div>
+        </div>
+      </div>
+      <div class="rpanel-welcome">
+        <div class="welcome-msg">
+          <div class="welcome-message">
+            Hello <%= current_user.first_name.capitalize  %>!
+          </div>
+          <div class="welcome-paragraph">
+            Have a nice day and don’t forget to take care of your health!
+          </div>
+        </div>
+        <div class="welcome-image" style="background-image: url('<%= image_url('dashboard.png') %>'); background-size: cover;">
+
+        </div>
       </div>
     </div>
+  <div class="rpanel">
     <div class="rpanel-cards">
-      <div class="rpanel-card">Medical Files</div>
-      <div class="rpanel-card">Patient Sheet</div>
-      <div class="rpanel-card">Medicines</div>
-      <div class="rpanel-card">Symptoms</div>
+    <%= link_to medical_files_path, class:"linkto" do %>
+    <div class="rpanel-card medicine" style="background-image: url('<%= image_url('shapeslol.png') %>'); background-size: cover;">
+        <i class="fa-solid fa-file-medical bg-icon"></i>
+          <div class="card-title">Medical Files</div>
+      </div>
     </div>
-    <div class="rpanel-bottom">
-      <div class="vitalsigns">Vital Signs</div>
-      <div class="appointments">Appointments</div>
+    <% end %>
+     <div class="rpanel-cards">
+     <%= link_to vital_signs_path, class:"linkto" do %>
+      <div class="rpanel-card vitalsigns"><i class="fa-solid fa-heart-pulse bg-icon"></i><div class="card-title">Vital Signs</div></div>
+    <% end %>
+    <%= link_to medicines_path, class:"linkto" do %>
+      <div class="rpanel-card medicines"><i class="fa-solid fa-capsules bg-icon"></i><div class="card-title">Medicines</div></div>
+    <% end %>
+    </div>
+  </div>
+  <div class="bpanel">
+    <div class="bpanel-cards">
+      <%= link_to appointments_path, class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-calendar-check bg-icon-bcard"></i><div class="card-title">Appointments</div></div>
+      <% end %>
+      <%= link_to patient_sheet_index_path , class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-hospital-user bg-icon-bcard"></i><div class="card-title">Patient Sheet</div></div>
+      <% end %>
+      <%= link_to symptoms_path, class:"linkto" do %>
+      <div class="bpanel-card bottom-card"><i class="fa-solid fa-head-side-cough bg-icon-bcard"></i><div class="card-title">Symptoms</div></div>
+      <% end %>
     </div>
   </div>
 </div>

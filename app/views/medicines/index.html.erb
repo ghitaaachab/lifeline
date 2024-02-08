@@ -1,9 +1,12 @@
-<h1><img src="/assets/med.png"> Medicines</h1>
+<div class="medicines-container">
+
+<h1 style="color: white; font-size: 28px;" class="mb-5">Medicines</h1>
+<div class="medicines-form">
 <%= simple_form_for @new_medicine do |form| %>
   <div class="cont" data-controller="controller">
     <div class="field">
     <%= form.label :Name, class: "lab1" %>
-      <%= form.text_field :name, placeholder: "Doliprane" , id:"txt"%>
+      <%= form.text_field :name, placeholder: "Enter name of medicine" , id:"txt"%>
     </div>
 
    <div class="field">
@@ -22,22 +25,32 @@
     </div>
 
     <div class="actions">
-      <%= form.submit "Add", class: "btn", id: "submit" %>
+      <%= form.submit "Add Medicine", class: "add-medicine", id: "submit" %>
     </div>
   </div>
 <% end %>
-<ul>
-  <% @medicines.each do |medicine| %>
-    <li>
-      <div id="medicine_<%= medicine.id %>">
-        <span class="medicine-name"><%= medicine.name %></span>
-        <span class="medicine-date"><%= medicine.start_date %></span>
+</div>
+<ul id="mul">
+  <% @medicines.reverse_each do |medicine| %>
+    <li id="mil">
+      <div class="medicine-infos">
+        <div id="medicine_<%= medicine.id %>">
+        <span class="medicine-name"><%= medicine.name.capitalize %></span>
+        <span class="medicine-date">from: <%= medicine.start_date %></span>
+        <span class="medicine-date">to: <%= medicine.end_date %></span>
       </div>
       <div class="medicine-actions">
         <%= form_with(model: medicine, url: medicine_path(medicine), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
           <%= delete_form.submit "Delete", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
         <% end %>
       </div>
+      </div>
+      <div>
+        <div class="medicine-notes">
+          <%= medicine.notes %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>
+</div>
