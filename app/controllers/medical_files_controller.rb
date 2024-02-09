@@ -1,4 +1,6 @@
 class MedicalFilesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show, :preview, :download]
+
   def index
     @files = MedicalFile.where(user_id: current_user.id)
     @file = MedicalFile.new
