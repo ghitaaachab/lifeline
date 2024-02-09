@@ -80,3 +80,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "matrix", "~> 0.4.2"
