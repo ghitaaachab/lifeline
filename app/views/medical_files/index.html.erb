@@ -22,7 +22,7 @@
   <% if @files.present? %>
     <div class="container mt-4">
       <% @files.reverse_each do |medical_file| %>
-      <% qrcode = RQRCode::QRCode.new("localhost:3000/#{preview_medical_file_path(medical_file.file_id)}") %>
+      <% qrcode = RQRCode::QRCode.new("http://lifelineon-237638fabcd0.herokuapp.com/#{preview_medical_file_path(medical_file.file_id)}") %>
     <div class="mfs-list mt-4">
         <div><p style="color: black;"><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
         <div class="mf-view">
