@@ -12,8 +12,7 @@ class PatientSheetsController < ApplicationController
     @patient_sheet = PatientSheet.new(patient_sheets_params)
     @patient_sheet.user = current_user
     if @patient_sheet.save!
-
-      redirect_to dashboards_path
+      redirect_to dashboard_path
     else
       render :new
     end
