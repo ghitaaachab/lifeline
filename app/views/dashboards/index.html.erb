@@ -6,6 +6,7 @@
   <div class="rpanel-header">
       <div class="rpanel-report">
       <i class="fa-solid fa-id-card-clip bg-icon-pcard"></i>
+      <% if @patient_sheet %>
         <% if @patient_sheet.current_dr != nil %>
           <div>
             <div><strong>Treating Doctor: </strong>Dr. <%= @patient_sheet.current_dr.capitalize %></div>
@@ -20,6 +21,7 @@
           <div class="ps-message"><strong>Please update your patient sheet!</strong></div>
           <i class="ps-msg-icon fa-solid fa-circle-exclamation"></i>
         <% end %>
+      <% end %>
       </div>
       <div class="rpanel-welcome">
         <div class="welcome-msg">
