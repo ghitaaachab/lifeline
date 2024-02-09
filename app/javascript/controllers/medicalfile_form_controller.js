@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus";
 // Connects to data-controller="medicalfile-form"
 
 export default class extends Controller {
-  static targets = ["modal", "addmedicalfilebtn", "newmedicalfile"];
+  static targets = ["modal", "addmedicalfilebtn", "newmedicalfile", "qrcode", "qrcodebtn"];
 
   connect() {}
 
@@ -14,5 +14,9 @@ export default class extends Controller {
 
   showImage() {
     this.modalTarget.classList.toggle("d-none");
+  }
+
+  showQrcode(){
+    this.qrcodeTarget.classList.toggle("d-none");
   }
 }

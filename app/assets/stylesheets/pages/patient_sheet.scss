@@ -1,23 +1,47 @@
+// Basic styling for form elements
 div {
   margin-bottom: 20px;
 }
 
+.mf-container {
+  margin: 0 20%;
+  border-radius: 15px;
+  padding: 20px 0px;
+  margin-bottom: 80px;
+}
+
+.mf-infos {
+  padding: 0px 30px;
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
 label {
+  margin-top: 35px;
   display: block;
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 8px;
 }
 
-input {
-  width: 50%;
-  padding: 8px;
+input,
+select {
+  width: 100%; /* Adjust width as needed for smaller inputs */
+  padding: 8px 12px; /* Reduce padding slightly */
   font-size: 14px;
   border: 1px solid #7C3AED;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
+/* Placeholder styling (already included) */
+input::placeholder,
+select::placeholder {
+  color: #999;
+  opacity: 1;
+}
 
 button {
   background-color: #007bff;
@@ -36,11 +60,46 @@ button:hover {
 /* Additional styling for spacing and layout */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
+  margin: 0; /* Remove default body margin */
 }
 
-/* Optional: Add some padding to the form container */
 .form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the form horizontally and vertically */
   max-width: 400px;
-  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Emergency card styling */
+.emergency-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.emergency-card h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.emergency-contact-fields {
+  display: flex;
+  justify-content: space-between; /* Align contact name and number fields */
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
 }

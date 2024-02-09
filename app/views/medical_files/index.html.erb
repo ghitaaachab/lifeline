@@ -22,13 +22,25 @@
   <% if @files.present? %>
     <div class="container mt-4">
       <% @files.reverse_each do |medical_file| %>
+      <% qrcode = RQRCode::QRCode.new("localhost:3000/#{preview_medical_file_path(medical_file.file_id)}") %>
     <div class="mfs-list mt-4">
         <div><p style="color: black;"><%= medical_file.name.capitalize %></p> <p style="color: grey;"> Created at:  <%= medical_file.created_at %></p></div>
         <div class="mf-view">
           <%= link_to medical_file_path(medical_file.file_id), class: "" do %>
-            View Medical File
-            <i class="fa-solid fa-eye"></i>
+          <div class="mf-view-actions">
+            <div>
+              View Medical File
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
           <% end %>
+           <div data-action="click->medicalfile-form#showQrcode" data-medicalfile-form-target="qrcodebtn">
+                View QR Code
+                <i class="fa-solid fa-eye"></i>
+              </div>
+            <div class="d-none" data-medicalfile-form-target="qrcode">
+              <%= qrcode.as_svg( fill: "FFF", offset: 0, color: "000", shape_rendering: 'crispEdges', module_size: 2, standalone: true ).html_safe %>
+            </div>
         </div>
       </div>
     <% end %>

@@ -6,15 +6,20 @@
   <div class="rpanel-header">
       <div class="rpanel-report">
       <i class="fa-solid fa-id-card-clip bg-icon-pcard"></i>
-        <div>
-          <div><strong>Treating Doctor: </strong>Dr. <%= @patient_sheet.current_dr.capitalize %></div>
-          <div><strong>Current Treating:</strong> <%= @patient_sheet.current_tt.capitalize %></div>
-        </div>
-        <div>
-          <div><strong>Weight:</strong> <%= @patient_sheet.weight %> <strong>kgs</strong></div>
-          <div><strong>Height:</strong> <%= @patient_sheet.height %> <strong>cms</strong></div>
-          <div><strong>Blood Type:</strong> <%= @patient_sheet.blood_type %></div>
-        </div>
+        <% if @patient_sheet.current_dr != nil %>
+          <div>
+            <div><strong>Treating Doctor: </strong>Dr. <%= @patient_sheet.current_dr.capitalize %></div>
+            <div><strong>Current Treating:</strong> <%= @patient_sheet.current_tt.capitalize %></div>
+          </div>
+          <div>
+            <div><strong>Weight:</strong> <%= @patient_sheet.weight %> <strong>kgs</strong></div>
+            <div><strong>Height:</strong> <%= @patient_sheet.height %> <strong>cms</strong></div>
+            <div><strong>Blood Type:</strong> <%= @patient_sheet.blood_type %></div>
+          </div>
+        <% else %>
+          <div class="ps-message"><strong>Please update your patient sheet!</strong></div>
+          <i class="ps-msg-icon fa-solid fa-circle-exclamation"></i>
+        <% end %>
       </div>
       <div class="rpanel-welcome">
         <div class="welcome-msg">
@@ -22,7 +27,7 @@
             Hello <%= current_user.first_name.capitalize  %>!
           </div>
           <div class="welcome-paragraph">
-            Have a nice day and don’t forget to take care of your health!
+            Have a great day and don’t forget to take care of your health!
           </div>
         </div>
         <div class="welcome-image" style="background-image: url('<%= image_url('dashboard.png') %>'); background-size: cover;">

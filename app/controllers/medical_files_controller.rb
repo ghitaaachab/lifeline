@@ -69,7 +69,7 @@ class MedicalFilesController < ApplicationController
     test_images = []
     prescription_images = []
 
-    report = Prawn::Document.newgit
+    report = Prawn::Document.new
     report.text "", leading: 10
     report.text "#{@file.name}", size: 30, style: :bold, align: :center, leading: 40
     report.text @file.created_at.strftime("%B %d, %Y"), leading: 15, align: :right
@@ -80,7 +80,6 @@ class MedicalFilesController < ApplicationController
     report.text "Blood Type: #{@patient_sheet.blood_type}", leading: 40
     report.text "Treating Doctor: #{@file.treating_dr}", leading: 30, style: :bold
     report.text @file.notes, leading: 20
-
 
     @file.tests.each do |test|
       test.photos.each do |photo|

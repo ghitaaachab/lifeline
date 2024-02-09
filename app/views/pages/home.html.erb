@@ -7,7 +7,11 @@
     <div class="home-description">Lifeline throws you a lifesaver. Ditch the disorganized notes and scattered reports.
       Store your medical files securely, track progress seamlessly, and access crucial information instantly.
     </div>
-    <div class="home-action">Join Lifeline for free!</div>
+    <% if user_signed_in? %>
+        <%= link_to "Visit Dashboard", dashboard_path, class: "home-action" %>
+    <% else %>
+        <%= link_to "Join LifeLine Today", new_user_registration_path, class: "home-action" %>
+    <% end %>
   </div>
 </div>
 <div class="features" style="background-image: url('<%= image_url('shapes.png') %>')">
@@ -38,4 +42,3 @@
     </div>
   </div>
 </div>
-
