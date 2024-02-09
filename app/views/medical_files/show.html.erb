@@ -22,6 +22,7 @@
       <div class="doc-title">Treating Doctor:</div>
       <div>Dr. <%= @file.treating_dr.capitalize %></div>
     </div>
+
     <div class="details-container ">
       <div class="details-section">
         <div class="mf-description ">
@@ -31,27 +32,28 @@
                 <div id="picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
-                      <%= cl_image_tag(photo.key, height: 100, width: 100, crop: :fill, class: 'img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                      <%= cl_image_tag(photo.key,crop: :fill, class: 'mainImg',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
                   <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
-                    <%= cl_image_tag(photo.key, height: 500, width: 500) %>
+                    <%= cl_image_tag(photo.key, class:"modalImg") %>
                   </div>
                 </div>
                 </div>
               <% end %>
             <% end %>
+
           </div>
             <div class="mf-description">
             <div class="mf-title">Tests</div>
-            <% @prescriptions.each do |prescription| %>
+          <% @prescriptions.each do |prescription| %>
               <% prescription.photos.each do |photo| %>
                 <div id = "picdiv" class="d-inline-flex p-2 bd-highlight">
                  <div data-controller="medicalfile-form">
                   <div class="mf-image" >
-                      <%= cl_image_tag(photo.key, height: 80, width: 80, crop: :fill, class: 'x img-thumbnail',  data: { action: 'click->medicalfile-form#showImage' }) %>
+                      <%= cl_image_tag(photo.key, class: 'mainImg',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
                   <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
-                    <%= cl_image_tag(photo.key, height: 500, width: 500) %>
+                    <%= cl_image_tag(photo.key, class: "modalImg") %>
                   </div>
                 </div>
                 </div>

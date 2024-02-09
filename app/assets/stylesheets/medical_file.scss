@@ -2,6 +2,16 @@ div {
   margin: 0;
 }
 
+.mainImg {
+  width: 150px;
+  height: 150px;
+}
+
+.modalImg {
+  width: 500px;
+  height: 500px;
+}
+
 .mf-container {
   margin: 50px 20%;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
@@ -267,14 +277,4 @@ form {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-}
-
-img {
-  width: 120px;
-}
-
-.img-thumbnail {
-  border: none !important;
-  background-color: transparent !important;
-  border-radius: 10px;
 }
