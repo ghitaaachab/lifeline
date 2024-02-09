@@ -1,0 +1,53 @@
+<div class="mf-container" >
+ <h1 style="color: white;">Patient sheet </h1>
+  <%= simple_form_for @patient_sheet do |form| %>
+ <div class="mf-infos">
+  <div>
+    <%= form.label :blood_type, 'blood type *', class: "label" %>
+    <%= form.select :blood_type, [['A+', 'A+'], ['A-', 'A-'], ['B+', 'B+'], ['B-', 'B-'], ['AB+', 'AB+'], ['AB-', 'AB-'], ['O+', 'O+'], ['O-', 'O-']], {}, { class: 'in-range' } %>
+  </div>
+
+  <div>
+     <%= form.label :height, 'Height (cm)*', class: "label" %>
+    <%= form.number_field :height, class: 'in-range' %>
+  </div>
+
+  <div>
+    <%= form.label :weight, 'Weight (kg)*' , class: "label"%>
+    <%= form.number_field :weight, class: 'in-range' %>
+  </div>
+ </div>
+  <div>
+    <%= form.label :family_history, 'Family history *'  %>
+    <%= form.text_field :family_history, class: 'input' %>
+  </div>
+
+  <div>
+    <%= form.label :surgical_history,  'Surgical history' %>
+    <%= form.text_field :surgical_history, class: 'input' %>
+  </div>
+
+  <div>
+    <%= form.label :current_dr,  'Current doctor ' %>
+    <%= form.text_field :current_dr, class: 'input' %>
+  </div>
+
+  <div>
+    <%= form.label :current_tt,  'Current treatment ' %>
+    <%= form.text_field :current_tt, class: 'input' %>
+  </div>
+  <div>
+    <%= form.label :emergency_contact_name , 'Emergency contact name ' %>
+    <%= form.text_field :emergency_contact_name, class: 'input' %>
+  </div>
+
+  <div>
+    <%= form.label :emergency_contact_number , 'Emergency contact number ' %>
+    <%= form.text_field :emergency_contact_number, class: 'input' %>
+  </div>
+
+  <div>
+    <%= form.submit 'Add ', class: 'btn btn-primary' %>
+  </div>
+ <% end %>
+</div>

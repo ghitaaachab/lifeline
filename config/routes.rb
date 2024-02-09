@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   resources :vital_signs, only: [:index, :new, :create]
   resources :symptoms
   resources :medicines
-  resources :patient_sheet, only: [:index, :create]
+  resources :patient_sheets, only: [:index, :create]
+
 end
