@@ -6,7 +6,11 @@ $primary-color: #7C3AED;
 }
 
 .full-width {
+  display: block;
+  text-align: center;
   width: 100%;
+  background-color: #002162bb;
+  font-size: 14px;
 }
 
 .form-title {

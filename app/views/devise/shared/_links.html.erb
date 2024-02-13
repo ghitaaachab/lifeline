@@ -1,5 +1,7 @@
+<%= stylesheet_link_tag "devise_pages", "data-turbo-track": "reload" %>
+
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Log in", new_session_path(resource_name) %><br />
+  <%= link_to "Already have an account? Login here", new_session_path(resource_name), class: "btn-signup full-width" %><br />
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
