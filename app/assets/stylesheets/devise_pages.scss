@@ -1,8 +1,51 @@
 $primary-color: #7C3AED;
 
+.form-inputs input {
+  border: 1px solid #004B88;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.signup {
+  display: block;
+  text-align: center;
+  width: 45%;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #002162bb;
+  font-size: 18px;
+  &:hover {
+    background-color: #002162;
+    color: white;
+  }
+}
+
 .lifeline-form {
-  width: 500px;
-  margin: 0 auto;
+  // width: 500px;
+  // margin: 0 auto;
+  position: relative;
+  margin: 5% 10%;
+  background-color: #f2f2f2;
+  padding: 60px;
+  border-radius: 20px;
+  color: black;
+}
+
+.login-form {
+  display: flex;
+}
+
+.side-image {
+  background: #002162bb;
+  height: 100%;
+  background-size: cover;
+  top: 0;
+  right: 0;
+  border-radius: 0px 20px 20px 0px;
+  width: 50%;
+  position: absolute;
 }
 
 .full-width {
@@ -10,10 +53,37 @@ $primary-color: #7C3AED;
   text-align: center;
   width: 100%;
   background-color: #002162bb;
-  font-size: 14px;
+  font-size: 18px;
+  &:hover {
+    background-color: #002162;
+    color: white;
+  }
 }
 
 .form-title {
-  text-align: center;
+  text-align: left;
   margin-bottom: 10px;
+}
+
+.left-side {
+  width: 45%;
+}
+
+.form-check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-check-label.boolean.optional {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.forgot-pwd {
+  font-size: 18px;
+  text-decoration: none;
+  color: #002162;
+  font-weight: 600;
 }
