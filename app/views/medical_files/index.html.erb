@@ -37,9 +37,9 @@
            <div data-action="click->medicalfile-form#showQrcode" data-medicalfile-form-target="qrcodebtn">
                 View QR Code
                 <i class="fa-solid fa-eye"></i>
-              </div>
-            <div class="d-none" data-medicalfile-form-target="qrcode">
+            <div class="d-none qrcodeimg" data-medicalfile-form-target="qrcode">
               <%= qrcode.as_svg( fill: "FFF", offset: 0, color: "000", shape_rendering: 'crispEdges', module_size: 3, standalone: true ).html_safe %>
+            </div>
             </div>
         </div>
       </div>
