@@ -1,11 +1,9 @@
-/* Main heading */
 .ah1 {
   text-align: center;
   margin: 20px auto;
   max-width: 800px;
   font-weight: bold;
 }
-
 /* About section */
 .about {
   display: flex;
@@ -13,8 +11,11 @@
   align-items: center;
   gap: 20px;
   text-align: justify;
+  margin-top: 30px;
+  font-weight: 350;
+  font-size: xx-large;
+  color: rgba(255, 255, 255, 0.927);
 }
-
 /* Images */
 .rpanel-cardss,
 .lpanel-cardss {
@@ -22,23 +23,43 @@
   justify-content: center;
   gap: 20px;
   border-radius: 50%;
+  margin-bottom: 20px;
 }
-
 .rpanel-carrd,
 .lpanel-carrd {
-  width: 150px;
+  width: 220px;
   height: auto;
   border-radius: 50%;
 }
-
 /* Special Acknowledgment section */
 .ah2 {
   text-align: center;
   margin: 20px 0;
 }
-
+.aboutcontainer{
+margin-top: 20px;
+font-size: 50px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: 900;
+color: rgba(255, 255, 255, 0.767);
+}
+.specialcontainer{
+  display: flex;
+  width: 75%;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: justify;
+}
 /* Paragraphs */
 .pabout {
-  text-align: center; /* Center the paragraphs */
+  width: 75%;
   margin: 50px 50px; /* Add margin to the left and right sides */
+}
+.acknocontainer{
+  margin-top: 20px;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.767);
 }

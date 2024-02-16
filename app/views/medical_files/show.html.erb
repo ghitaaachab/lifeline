@@ -34,7 +34,7 @@
                   <div class="mf-image" >
                       <%= cl_image_tag(photo.key,crop: :fill, class: 'mainImg',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
-                  <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
+                  <div data-medicalfile-form-target="modal" class="bigImg d-none" style="position: absolute;">
                     <%= cl_image_tag(photo.key, class:"modalImg") %>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                   <div class="mf-image" >
                       <%= cl_image_tag(photo.key, class: 'mainImg',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
-                  <div data-medicalfile-form-target="modal" class="d-none" style="position: absolute;">
+                    <div data-medicalfile-form-target="modal" class="bigImg d-none" style="position: absolute;">
                     <%= cl_image_tag(photo.key, class: "modalImg") %>
                   </div>
                 </div>

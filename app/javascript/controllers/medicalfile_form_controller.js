@@ -12,8 +12,16 @@ export default class extends Controller {
     this.form.classList.toggle("shown");
   }
 
-  showImage() {
-    this.modalTarget.classList.toggle("d-none");
+  showImage(e) {
+    let allBigImages = document.querySelectorAll('.bigImg');
+    allBigImages.forEach((img) => {
+      if (!img.classList.contains('d-none')){
+        img.classList.add('d-none');
+      }
+    })
+    this.modalTarget.classList.toggle('d-none')
+    window.scrollTo(0, 0);
+    console.log(x);
   }
 
   showQrcode(e){
