@@ -3,7 +3,7 @@
   <%= simple_form_for @patient_sheet do |form| %>
  <div class="mf-infos">
   <div>
-    <%= form.label :blood_type, 'blood type *', class: "label" %>
+    <%= form.label :blood_type, 'Blood type *', class: "label" %>
     <%= form.select :blood_type, [['A+', 'A+'], ['A-', 'A-'], ['B+', 'B+'], ['B-', 'B-'], ['AB+', 'AB+'], ['AB-', 'AB-'], ['O+', 'O+'], ['O-', 'O-']], {}, { class: 'in-range' } %>
   </div>
 
@@ -47,7 +47,7 @@
   </div>
 
   <div>
-    <%= form.submit 'Add ', class: 'btn btn-primary' %>
+    <%= form.submit 'Add ', class: 'add-sheet' %>
   </div>
  <% end %>
 </div>

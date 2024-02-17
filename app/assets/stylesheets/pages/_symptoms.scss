@@ -1,22 +1,29 @@
-/* Button Styles */
-.btn {
-  width: 20%;
-  padding: 10px 20px;
-  margin: 24px auto;
-  display: block;
-  text-align: center;
-  border: none;
-  border-radius: 4px;
-  background-color: hsl(262, 83%, 58%);
-  color: #fff;
-  font-size: 14px;
+
+.medicines-container {
+  margin: 50px 15%;
+}
+
+.add-medicine {
+  margin: auto 0;
+  background-color: #002162bb;
+  border: none !important;
+  padding: 10px 18px;
+  border-radius: 5px;
+  color: white;
   cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  height: fit-content;
+}
+
+.inp {
+  border: none !important;
 }
 
 #txt {
   width: 100%;
   display: block;
-  border: 1px solid #7C3AED;
+
   font-size: 14px;
   box-sizing: border-box;
   padding: 15px;
@@ -37,7 +44,6 @@
 #date-started{
   width: 100%;
   display: block;
-  border: 1px solid #7C3AED;
   font-size: 14px;
   box-sizing: border-box;
 
@@ -53,7 +59,6 @@
 #date-finished{
   width: 100%;
   display: block;
-  border: 1px solid #7C3AED;
   font-size: 14px;
   box-sizing: border-box;
 
@@ -108,7 +113,6 @@
   color: #ffffff;
   font-weight: bold;
   text-decoration: none;
-  background-color: #7C3AED;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   box-sizing: border-box;
@@ -118,17 +122,14 @@
 
 
 .delete-link:hover {
-  background-color: #8f55f4;
   color: #fff;
 }
 
 textarea {
   width: 100%;
   display: block;
-  border: 1px solid #7C3AED;
   font-size: 14px;
   box-sizing: border-box;
-
   padding: 30px;
   margin: 10px 0;
   border-radius: 8px;
@@ -152,4 +153,21 @@ h1 {
   font-size: 24px;
   color: #333;
   margin: 0;
+}
+
+.symptoms-form {
+  margin: 0 10%;
+  margin-bottom: 60px;
+}
+
+.symptom-li {
+  background-color: rgba(255, 255, 255, 0.85);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: black;
+  font-size: 20px;
+  padding: 15px 20px;
+  list-style-type: none;
+  margin-bottom: 15px;
 }

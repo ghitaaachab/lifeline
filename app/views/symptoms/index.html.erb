@@ -1,29 +1,33 @@
-<h1><img src="/assets/sym.png"> Symptoms</h1>
-<%= form_with(model: @new_symptom, url: symptoms_path, method: :post, remote: true) do |form| %>
-  <div class="cont" data-controller="controller">
-    <div class="field">
-      <%= form.label :description, class: "lab1" , id:"#txt" %>
-      <%= form.text_field :description, class: "inp", placeholder: "Fever" ,id:"input"%>
-    </div>
+<div class="medicines-container">
 
-    <div class="field">
-      <%= form.label :start_date, class: "lab" %>
-      <%= form.datetime_local_field :start_date, class: "inp", id: "date-started" %>
-    </div>
+<h1 style="color: white; font-size: 28px;" class="mb-5">Symptoms</h1>
+<div class="symptoms-form">
+  <%= form_with(model: @new_symptom, url: symptoms_path, method: :post, remote: true) do |form| %>
+    <div class="cont" data-controller="controller">
+      <div class="field">
+        <%= form.label :description, class: "lab1" , id:"#txt" %>
+        <%= form.text_field :description, class: "inp", placeholder: "Fever" ,id:"input"%>
+      </div>
 
-    <div class="field">
-      <%= form.label :end_date, class: "lab" %>
-      <%= form.datetime_local_field :end_date, class: "inp", id: "date-finished" %>
-    </div>
+      <div class="field">
+        <%= form.label :start_date, class: "lab" %>
+        <%= form.datetime_local_field :start_date, class: "inp", id: "date-started" %>
+      </div>
 
-    <div class="actions">
-      <%= form.submit "Add", class: "btn", id: "submit" %>
+      <div class="field">
+        <%= form.label :end_date, class: "lab" %>
+        <%= form.datetime_local_field :end_date, class: "inp", id: "date-finished" %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "Add", class: "add-medicine", id: "submit" %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 <ul>
   <% @symptoms.reverse_each do |symptom| %>
-    <li>
+    <li class="symptom-li">
       <div id="symptom_<%= symptom.id %>">
         <span class="symptom-description">Experienced <strong><%= symptom.description %></strong></span>
         <span class="symptom-date">from: <strong><%= symptom.start_date %></strong></span>
@@ -37,3 +41,5 @@
     </li>
   <% end %>
 </ul>
+
+</div>

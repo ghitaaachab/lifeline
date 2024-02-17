@@ -25,11 +25,19 @@
        <span class="symptom-description">Upcoming appointment with <strong><%= appointment.doctor_name.capitalize %></strong></span>
        <span class="symptom-date">at: <strong><%= appointment.date %></strong></span>
       </div>
-      <div class="symptom-actions">
-        <%= form_with(model: appointment, url: appointment_path(appointment), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
-          <%= delete_form.submit "Delete", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
-        <% end %>
-      </div>
+      <% if appointment.date < Date.today %>
+          <div class="symptom-actions">
+            <%= form_with(model: appointment, url: appointment_path(appointment), method: :delete, remote: true, class: "delete-form ") do |delete_form| %>
+              <%= delete_form.submit "Appointment Completed", class: "delete-link app-completed", onclick: "return confirm('Are you sure?');" %>
+            <% end %>
+          </div>
+          <% else %>
+          <div class="symptom-actions">
+            <%= form_with(model: appointment, url: appointment_path(appointment), method: :delete, remote: true, class: "delete-form") do |delete_form| %>
+              <%= delete_form.submit "Cancel Appointment", class: "delete-link", onclick: "return confirm('Are you sure?');" %>
+            <% end %>
+          </div>
+      <% end %>
     </li>
   <% end %>
 </ul>
