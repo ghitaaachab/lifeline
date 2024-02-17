@@ -34,6 +34,7 @@
 
 .lpanel-carrd {
   width: 400px;
+  border-radius: 10px;
 }
 /* Special Acknowledgment section */
 .ah2 {
@@ -49,11 +50,15 @@ color: rgba(255, 255, 255, 0.767);
 }
 .specialcontainer{
   display: flex;
-  width: 75%;
+  margin: 0 15%;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  text-align: justify;
+}
+
+.specialcontainerp {
+
 }
 /* Paragraphs */
 .pabout {
