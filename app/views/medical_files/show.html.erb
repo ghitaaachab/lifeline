@@ -36,6 +36,7 @@
                   </div>
                   <div data-medicalfile-form-target="modal" class="bigImg d-none" style="position: absolute;">
                     <%= cl_image_tag(photo.key, class:"modalImg") %>
+                    <span class="close"  data-action="click->medicalfile-form#close" >&times;</span>
                   </div>
                 </div>
                 </div>
@@ -52,9 +53,10 @@
                   <div class="mf-image" >
                       <%= cl_image_tag(photo.key, class: 'mainImg',  data: { action: 'click->medicalfile-form#showImage' }) %>
                   </div>
-                    <div data-medicalfile-form-target="modal" class="bigImg d-none" style="position: absolute;">
-                    <%= cl_image_tag(photo.key, class: "modalImg") %>
-                  </div>
+                    <div data-medicalfile-form-target="modal" data-action="click->medicalfile-form#close" class="bigImg d-none" style="position: absolute;">
+                      <%= cl_image_tag(photo.key, class: "modalImg") %>
+                      <span class="close"  data-action="click->medicalfile-form#close" >&times;</span>
+                    </div>
                 </div>
                 </div>
               <% end %>
