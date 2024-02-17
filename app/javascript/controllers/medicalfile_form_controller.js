@@ -24,6 +24,10 @@ export default class extends Controller {
     console.log(x);
   }
 
+  close(){
+    this.modalTarget.classList.toggle("d-none")
+  }
+
   showQrcode(e){
     e.currentTarget.querySelector('.qrcodeimg').classList.toggle('d-none');
   }

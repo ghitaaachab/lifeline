@@ -21,9 +21,26 @@
             <% appointment_date = appointment.date  %>
             <% appointment_date > Date.today && appointment_date <= future_date_limit %>
         <% end %>
-        <div data-controller="appointments" class="notifcation"><i class="fa-solid fa-bell">
-        </i>
-          <span class="badge"><%= upcoming_appointments.count %></span>
+        <div data-controller="appointments" class="notifcation">
+          <div data-action="click->appointments#load">
+            <i  class="fa-solid fa-bell"></i>
+            <span class="badge"><%= upcoming_appointments.count > 0 ? upcoming_appointments.count : ""  %></span>
+          </div>
+          <div id="myModal" data-appointments-target="xmodal" class="xmodal d-none">
+            <div class="xmodal-content">
+              <span class="close" data-appointments-target="close" data-action="click->appointments#close" >&times;</span>
+              <h2>Upcoming Appointments</h2>
+              <ul id="upcoming-appointments-list">
+                <% if upcoming_appointments.count > 0 %>
+                  <% upcoming_appointments.each do |appointment| %>
+                    <li>Dr.<%= appointment.doctor_name %> - <%= appointment.date.strftime("%A, %H:%M - %d %B %Y") %> </li>
+                  <% end %>
+                <% else %>
+                  <li>No upcoming appointments</li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
         <div> <%= link_to "Dashboard", dashboard_path, class: "btn-signup" %></div>
         <div><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn-signup" %></div>

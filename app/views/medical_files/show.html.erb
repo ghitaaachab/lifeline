@@ -73,13 +73,15 @@
       <%= link_to "Download Medical File", download_medical_file_path, class: "pdf-action" %>
     </div>
 
-    <div class="delete-action">
-    <%= link_to "Delete",
-            medical_file_path(@file),
-            method: :delete,
-            data: { confirm: "Are you sure?" },
-            class: "btn btn-danger deletebtn" %>
-    </div>
+    <% if current_user.id == @file.user_id %>
+      <div class="delete-action">
+      <%= link_to "Delete",
+              medical_file_path(@file),
+              method: :delete,
+              data: { confirm: "Are you sure?" },
+              class: "btn btn-danger deletebtn" %>
+      </div>
+    <% end %>
   </div>
 </div>
 </div>

@@ -98,3 +98,36 @@ div {
   font-size: 12px !important;
   font-weight: 600;
 }
+
+.xmodal {
+    position: fixed;
+    right: 40px;
+    top: -50px;
+    width: 30%;
+    overflow: auto;
+    border-radius: 10px;
+    text-shadow: 2.5px 2.5px 2.5px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    color: white;
+
+}
+
+.xmodal-content {
+  background-color: #1a4fbac4;
+  margin: 15% auto;
+  padding: 20px;
+  font-size: 24px;
+  width: 100%;
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  &:hover, &:focus {
+    color: #fafafac7;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
