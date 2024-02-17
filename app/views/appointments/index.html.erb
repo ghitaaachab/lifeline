@@ -22,7 +22,7 @@
     <li id="lis">
 
       <div id="symptom_<%= appointment.id %>">
-       <span class="symptom-description">Upcoming appointment with <strong><%= appointment.doctor_name.capitalize %></strong></span>
+       <span class="symptom-description">Upcoming appointment with Dr. <strong><%= appointment.doctor_name.capitalize %></strong></span>
        <span class="symptom-date">at: <strong><%= appointment.date %></strong></span>
       </div>
       <% if appointment.date < Date.today %>
