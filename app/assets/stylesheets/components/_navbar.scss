@@ -21,9 +21,15 @@ div {
 .navbar-custom {
   display: flex;
   flex-direction: row;
+  font-size: 19px;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0px;
+}
+
+.avatar{
+  width: 60px;
+  height: 60px;
 }
 
 .navbar-pages {
@@ -71,6 +77,8 @@ div {
   display: flex;
   align-items: center;
 }
+
+
 
 .navbar-links {
   text-decoration: none;

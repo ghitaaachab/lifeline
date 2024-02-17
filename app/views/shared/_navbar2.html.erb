@@ -47,7 +47,7 @@
         <div class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <% if current_user.photo.key.blank? %>
-              <%= image_tag "logo.png", height: 40, width: 40,  class: "avatar", alt: "dropdown menu" %>
+              <%= image_tag "logo.png", height: 65, width: 65,  class: "avatar", alt: "dropdown menu" %>
             <% else %>
               <%= cl_image_tag current_user.photo.key, height: 40, width: 40, crop: :fill,  class: "avatar", alt: "dropdown menu" %>
             <% end %>
