@@ -1,6 +1,6 @@
 class SymptomsController < ApplicationController
   def index
-    @symptoms = Symptom.all
+    @symptoms = current_user.symptoms
     @new_symptom = Symptom.new
   end
 
